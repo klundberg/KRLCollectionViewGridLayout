@@ -1,0 +1,23 @@
+PODS:
+  - KRLCollectionViewGridLayout (1.0.0)
+  - OCHamcrest (4.0.1)
+  - OCMockito (1.3.0):
+    - OCHamcrest (~> 4.0)
+    - TPWeakProxy (~> 1.0)
+  - TPWeakProxy (1.0.0)
+
+DEPENDENCIES:
+  - KRLCollectionViewGridLayout (from `../`)
+  - OCMockito
+
+EXTERNAL SOURCES:
+  KRLCollectionViewGridLayout:
+    :path: ../
+
+SPEC CHECKSUMS:
+  KRLCollectionViewGridLayout: b9e7158c93563523789de660ccf94efcfc52c373
+  OCHamcrest: b464725bbb48d0f1cd9c6f4ec3cb35fe0c4f2b94
+  OCMockito: eca2670b3ce4a457d316b046a36d6f2b980a4da7
+  TPWeakProxy: a23251ba7fbe268c93f809cc072ef834f5063798
+
+COCOAPODS: 0.33.1

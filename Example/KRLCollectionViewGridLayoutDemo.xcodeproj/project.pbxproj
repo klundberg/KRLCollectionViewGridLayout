@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		791EEB3E1957D297009DC47A /* KRLCollectionViewGridLayout.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 791EEB3D1957D297009DC47A /* KRLCollectionViewGridLayout.podspec */; };
+		791EEB481957DA9E009DC47A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794C059C18E5217600A94FC3 /* XCTest.framework */; };
+		791EEB491957DA9E009DC47A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794C057A18E5217600A94FC3 /* Foundation.framework */; };
+		791EEB4A1957DA9E009DC47A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794C057E18E5217600A94FC3 /* UIKit.framework */; };
+		791EEB501957DA9E009DC47A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 791EEB4E1957DA9E009DC47A /* InfoPlist.strings */; };
+		791EEB5A1957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 791EEB591957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m */; };
+		791EEB5D1957DB2F009DC47A /* KRLSimpleCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791EEB5C1957DB2F009DC47A /* KRLSimpleCollectionViewController.m */; };
+		794C057B18E5217600A94FC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794C057A18E5217600A94FC3 /* Foundation.framework */; };
+		794C057D18E5217600A94FC3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794C057C18E5217600A94FC3 /* CoreGraphics.framework */; };
+		794C057F18E5217600A94FC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794C057E18E5217600A94FC3 /* UIKit.framework */; };
+		794C058518E5217600A94FC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 794C058318E5217600A94FC3 /* InfoPlist.strings */; };
+		794C058718E5217600A94FC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 794C058618E5217600A94FC3 /* main.m */; };
+		794C058B18E5217600A94FC3 /* KLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 794C058A18E5217600A94FC3 /* KLAppDelegate.m */; };
+		794C058E18E5217600A94FC3 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794C058C18E5217600A94FC3 /* Main_iPhone.storyboard */; };
+		794C059118E5217600A94FC3 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794C058F18E5217600A94FC3 /* Main_iPad.storyboard */; };
+		794C059618E5217600A94FC3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 794C059518E5217600A94FC3 /* Images.xcassets */; };
+		79EBDAE6194C1051004A6BD7 /* KLGridLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EBDAE5194C1051004A6BD7 /* KLGridLayoutViewController.m */; };
+		CC9E4BB89FE54B8F9099487B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99351E477315433E912DA664 /* libPods.a */; };
+		E326D5432FCE495185EC0D6A /* libPods-KRLCollectionViewGridLayoutTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B349C1D612246D5820B6E8A /* libPods-KRLCollectionViewGridLayoutTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		791EEB541957DA9E009DC47A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 794C056F18E5217600A94FC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 794C057618E5217600A94FC3;
+			remoteInfo = KRLCollectionViewGridLayoutDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0176EF3EC7C34E00A507A660 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		4E59B64EF204468F86652511 /* Pods-KRLCollectionViewGridLayoutTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRLCollectionViewGridLayoutTests.xcconfig"; path = "Pods/Pods-KRLCollectionViewGridLayoutTests.xcconfig"; sourceTree = "<group>"; };
+		5B349C1D612246D5820B6E8A /* libPods-KRLCollectionViewGridLayoutTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KRLCollectionViewGridLayoutTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		791EEB3D1957D297009DC47A /* KRLCollectionViewGridLayout.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = KRLCollectionViewGridLayout.podspec; path = ../KRLCollectionViewGridLayout.podspec; sourceTree = "<group>"; };
+		791EEB471957DA9E009DC47A /* KRLCollectionViewGridLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KRLCollectionViewGridLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		791EEB4D1957DA9E009DC47A /* KRLCollectionViewGridLayoutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KRLCollectionViewGridLayoutTests-Info.plist"; sourceTree = "<group>"; };
+		791EEB4F1957DA9E009DC47A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		791EEB531957DA9E009DC47A /* KRLCollectionViewGridLayoutTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KRLCollectionViewGridLayoutTests-Prefix.pch"; sourceTree = "<group>"; };
+		791EEB591957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRLCollectionViewGridLayoutTest.m; sourceTree = "<group>"; };
+		791EEB5B1957DB2F009DC47A /* KRLSimpleCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRLSimpleCollectionViewController.h; sourceTree = "<group>"; };
+		791EEB5C1957DB2F009DC47A /* KRLSimpleCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRLSimpleCollectionViewController.m; sourceTree = "<group>"; };
+		794C057718E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KRLCollectionViewGridLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		794C057A18E5217600A94FC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		794C057C18E5217600A94FC3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		794C057E18E5217600A94FC3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		794C058218E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KRLCollectionViewGridLayoutDemo-Info.plist"; sourceTree = "<group>"; };
+		794C058418E5217600A94FC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		794C058618E5217600A94FC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		794C058818E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KRLCollectionViewGridLayoutDemo-Prefix.pch"; sourceTree = "<group>"; };
+		794C058918E5217600A94FC3 /* KLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLAppDelegate.h; sourceTree = "<group>"; };
+		794C058A18E5217600A94FC3 /* KLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLAppDelegate.m; sourceTree = "<group>"; };
+		794C058D18E5217600A94FC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		794C059018E5217600A94FC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		794C059518E5217600A94FC3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		794C059C18E5217600A94FC3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		79EBDAE4194C1051004A6BD7 /* KLGridLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLGridLayoutViewController.h; sourceTree = "<group>"; };
+		79EBDAE5194C1051004A6BD7 /* KLGridLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLGridLayoutViewController.m; sourceTree = "<group>"; };
+		99351E477315433E912DA664 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		791EEB441957DA9E009DC47A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				791EEB481957DA9E009DC47A /* XCTest.framework in Frameworks */,
+				791EEB4A1957DA9E009DC47A /* UIKit.framework in Frameworks */,
+				791EEB491957DA9E009DC47A /* Foundation.framework in Frameworks */,
+				E326D5432FCE495185EC0D6A /* libPods-KRLCollectionViewGridLayoutTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		794C057418E5217600A94FC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				794C057D18E5217600A94FC3 /* CoreGraphics.framework in Frameworks */,
+				794C057F18E5217600A94FC3 /* UIKit.framework in Frameworks */,
+				794C057B18E5217600A94FC3 /* Foundation.framework in Frameworks */,
+				CC9E4BB89FE54B8F9099487B /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		791EEB4B1957DA9E009DC47A /* KRLCollectionViewGridLayoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				791EEB591957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m */,
+				791EEB5B1957DB2F009DC47A /* KRLSimpleCollectionViewController.h */,
+				791EEB5C1957DB2F009DC47A /* KRLSimpleCollectionViewController.m */,
+				791EEB4C1957DA9E009DC47A /* Supporting Files */,
+			);
+			path = KRLCollectionViewGridLayoutTests;
+			sourceTree = "<group>";
+		};
+		791EEB4C1957DA9E009DC47A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				791EEB4D1957DA9E009DC47A /* KRLCollectionViewGridLayoutTests-Info.plist */,
+				791EEB4E1957DA9E009DC47A /* InfoPlist.strings */,
+				791EEB531957DA9E009DC47A /* KRLCollectionViewGridLayoutTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		794C056E18E5217600A94FC3 = {
+			isa = PBXGroup;
+			children = (
+				794C058018E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo */,
+				791EEB4B1957DA9E009DC47A /* KRLCollectionViewGridLayoutTests */,
+				794C057918E5217600A94FC3 /* Frameworks */,
+				794C057818E5217600A94FC3 /* Products */,
+				791EEB3D1957D297009DC47A /* KRLCollectionViewGridLayout.podspec */,
+				0176EF3EC7C34E00A507A660 /* Pods.xcconfig */,
+				4E59B64EF204468F86652511 /* Pods-KRLCollectionViewGridLayoutTests.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		794C057818E5217600A94FC3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				794C057718E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo.app */,
+				791EEB471957DA9E009DC47A /* KRLCollectionViewGridLayoutTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		794C057918E5217600A94FC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				794C057A18E5217600A94FC3 /* Foundation.framework */,
+				794C057C18E5217600A94FC3 /* CoreGraphics.framework */,
+				794C057E18E5217600A94FC3 /* UIKit.framework */,
+				794C059C18E5217600A94FC3 /* XCTest.framework */,
+				99351E477315433E912DA664 /* libPods.a */,
+				5B349C1D612246D5820B6E8A /* libPods-KRLCollectionViewGridLayoutTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		794C058018E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo */ = {
+			isa = PBXGroup;
+			children = (
+				794C059518E5217600A94FC3 /* Images.xcassets */,
+				794C058918E5217600A94FC3 /* KLAppDelegate.h */,
+				794C058A18E5217600A94FC3 /* KLAppDelegate.m */,
+				79EBDAE4194C1051004A6BD7 /* KLGridLayoutViewController.h */,
+				79EBDAE5194C1051004A6BD7 /* KLGridLayoutViewController.m */,
+				794C058F18E5217600A94FC3 /* Main_iPad.storyboard */,
+				794C058C18E5217600A94FC3 /* Main_iPhone.storyboard */,
+				794C058118E5217600A94FC3 /* Supporting Files */,
+			);
+			path = KRLCollectionViewGridLayoutDemo;
+			sourceTree = "<group>";
+		};
+		794C058118E5217600A94FC3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				794C058218E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo-Info.plist */,
+				794C058318E5217600A94FC3 /* InfoPlist.strings */,
+				794C058618E5217600A94FC3 /* main.m */,
+				794C058818E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		791EEB461957DA9E009DC47A /* KRLCollectionViewGridLayoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 791EEB581957DA9E009DC47A /* Build configuration list for PBXNativeTarget "KRLCollectionViewGridLayoutTests" */;
+			buildPhases = (
+				10ABFC27BB35469891DDFD50 /* Check Pods Manifest.lock */,
+				791EEB431957DA9E009DC47A /* Sources */,
+				791EEB441957DA9E009DC47A /* Frameworks */,
+				791EEB451957DA9E009DC47A /* Resources */,
+				61A7F742CBA14ACA96795812 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				791EEB551957DA9E009DC47A /* PBXTargetDependency */,
+			);
+			name = KRLCollectionViewGridLayoutTests;
+			productName = KRLCollectionViewGridLayoutTests;
+			productReference = 791EEB471957DA9E009DC47A /* KRLCollectionViewGridLayoutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		794C057618E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 794C05AC18E5217600A94FC3 /* Build configuration list for PBXNativeTarget "KRLCollectionViewGridLayoutDemo" */;
+			buildPhases = (
+				723194419BBC4AED8F2FFA7A /* Check Pods Manifest.lock */,
+				794C057318E5217600A94FC3 /* Sources */,
+				794C057418E5217600A94FC3 /* Frameworks */,
+				794C057518E5217600A94FC3 /* Resources */,
+				401226D9B460465C8C9CA3FB /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KRLCollectionViewGridLayoutDemo;
+			productName = KLCollectionLayoutsDemo;
+			productReference = 794C057718E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		794C056F18E5217600A94FC3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Lundbergsoft;
+				TargetAttributes = {
+					791EEB461957DA9E009DC47A = {
+						TestTargetID = 794C057618E5217600A94FC3;
+					};
+				};
+			};
+			buildConfigurationList = 794C057218E5217600A94FC3 /* Build configuration list for PBXProject "KRLCollectionViewGridLayoutDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 794C056E18E5217600A94FC3;
+			productRefGroup = 794C057818E5217600A94FC3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				794C057618E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo */,
+				791EEB461957DA9E009DC47A /* KRLCollectionViewGridLayoutTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		791EEB451957DA9E009DC47A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				791EEB501957DA9E009DC47A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		794C057518E5217600A94FC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				794C059118E5217600A94FC3 /* Main_iPad.storyboard in Resources */,
+				794C059618E5217600A94FC3 /* Images.xcassets in Resources */,
+				791EEB3E1957D297009DC47A /* KRLCollectionViewGridLayout.podspec in Resources */,
+				794C058E18E5217600A94FC3 /* Main_iPhone.storyboard in Resources */,
+				794C058518E5217600A94FC3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10ABFC27BB35469891DDFD50 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		401226D9B460465C8C9CA3FB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61A7F742CBA14ACA96795812 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-KRLCollectionViewGridLayoutTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		723194419BBC4AED8F2FFA7A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		791EEB431957DA9E009DC47A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				791EEB5D1957DB2F009DC47A /* KRLSimpleCollectionViewController.m in Sources */,
+				791EEB5A1957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		794C057318E5217600A94FC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				794C058718E5217600A94FC3 /* main.m in Sources */,
+				794C058B18E5217600A94FC3 /* KLAppDelegate.m in Sources */,
+				79EBDAE6194C1051004A6BD7 /* KLGridLayoutViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		791EEB551957DA9E009DC47A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 794C057618E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo */;
+			targetProxy = 791EEB541957DA9E009DC47A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		791EEB4E1957DA9E009DC47A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				791EEB4F1957DA9E009DC47A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		794C058318E5217600A94FC3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				794C058418E5217600A94FC3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		794C058C18E5217600A94FC3 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				794C058D18E5217600A94FC3 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		794C058F18E5217600A94FC3 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				794C059018E5217600A94FC3 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		791EEB561957DA9E009DC47A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E59B64EF204468F86652511 /* Pods-KRLCollectionViewGridLayoutTests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KRLCollectionViewGridLayoutDemo.app/KRLCollectionViewGridLayoutDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KRLCollectionViewGridLayoutTests/KRLCollectionViewGridLayoutTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "KRLCollectionViewGridLayoutTests/KRLCollectionViewGridLayoutTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		791EEB571957DA9E009DC47A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E59B64EF204468F86652511 /* Pods-KRLCollectionViewGridLayoutTests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KRLCollectionViewGridLayoutDemo.app/KRLCollectionViewGridLayoutDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KRLCollectionViewGridLayoutTests/KRLCollectionViewGridLayoutTests-Prefix.pch";
+				INFOPLIST_FILE = "KRLCollectionViewGridLayoutTests/KRLCollectionViewGridLayoutTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		794C05AA18E5217600A94FC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		794C05AB18E5217600A94FC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		794C05AD18E5217600A94FC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0176EF3EC7C34E00A507A660 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KRLCollectionViewGridLayoutDemo/KRLCollectionViewGridLayoutDemo-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/KRLCollectionViewGridLayoutDemo/KRLGridLayoutDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		794C05AE18E5217600A94FC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0176EF3EC7C34E00A507A660 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KRLCollectionViewGridLayoutDemo/KRLCollectionViewGridLayoutDemo-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/KRLCollectionViewGridLayoutDemo/KRLGridLayoutDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		791EEB581957DA9E009DC47A /* Build configuration list for PBXNativeTarget "KRLCollectionViewGridLayoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				791EEB561957DA9E009DC47A /* Debug */,
+				791EEB571957DA9E009DC47A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		794C057218E5217600A94FC3 /* Build configuration list for PBXProject "KRLCollectionViewGridLayoutDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				794C05AA18E5217600A94FC3 /* Debug */,
+				794C05AB18E5217600A94FC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		794C05AC18E5217600A94FC3 /* Build configuration list for PBXNativeTarget "KRLCollectionViewGridLayoutDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				794C05AD18E5217600A94FC3 /* Debug */,
+				794C05AE18E5217600A94FC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 794C056F18E5217600A94FC3 /* Project object */;
+}

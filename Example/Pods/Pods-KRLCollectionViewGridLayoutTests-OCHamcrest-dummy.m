@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_KRLCollectionViewGridLayoutTests_OCHamcrest : NSObject
+@end
+@implementation PodsDummy_Pods_KRLCollectionViewGridLayoutTests_OCHamcrest
+@end
