@@ -1,4 +1,3 @@
-# Uncomment this line to define a global platform for your project
 platform :ios, '6.0'
 
 xcodeproj 'KRLCollectionViewGridLayoutDemo'
@@ -8,9 +7,3 @@ pod 'KRLCollectionViewGridLayout', :path => "../"
 target :KRLCollectionViewGridLayoutTests do
     pod 'OCMockito'
 end
-
-# Uncomment the following lines to add testing dependencies
-# target "DemoTests" do
-#   pod 'Expecta'
-# end
-
