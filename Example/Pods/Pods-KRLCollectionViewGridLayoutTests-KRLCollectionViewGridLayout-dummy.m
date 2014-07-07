@@ -1,5 +1,0 @@
-#import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_KRLCollectionViewGridLayoutTests_KRLCollectionViewGridLayout : NSObject
-@end
-@implementation PodsDummy_Pods_KRLCollectionViewGridLayoutTests_KRLCollectionViewGridLayout
-@end
