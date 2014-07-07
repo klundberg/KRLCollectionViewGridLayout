@@ -18,6 +18,7 @@
 
 - (void)dealloc
 {
+    // needed to avoid unit test crashes.
     self.collectionView.dataSource = nil;
     self.collectionView.delegate = nil;
     self.collectionView = nil;

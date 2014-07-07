@@ -9,22 +9,46 @@
 #import "KRLCollectionViewGridLayout.h"
 
 @interface KRLCollectionViewGridLayout ()
-@property (nonatomic, copy) NSArray *attributesBySection;
+@property (nonatomic, strong) NSMutableArray *attributesBySection;
 @property (nonatomic, assign, readwrite) CGFloat collectionViewContentLength;
 @end
 
 @implementation KRLCollectionViewGridLayout
 
-- (instancetype)init
+- (void)prepareLayout
 {
-    self = [super init];
-    if (self) {
-        _attributesBySection = [NSMutableArray array];
-    }
-    return self;
+    [self calculateContentSize];
+    [self calculateLayoutAttributes];
 }
 
-- (void)prepareLayout
+- (CGSize)collectionViewContentSize
+{
+    if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
+        return CGSizeMake(self.collectionView.bounds.size.width, self.collectionViewContentLength);
+    } else {
+        return CGSizeMake(self.collectionViewContentLength, self.collectionView.bounds.size.height);
+    }
+}
+
+- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
+{
+    NSMutableArray *visibleAttributes = [NSMutableArray array];
+    for (NSArray *sectionAttributes in self.attributesBySection) {
+        for (UICollectionViewLayoutAttributes *attributes in sectionAttributes) {
+            if (CGRectIntersectsRect(rect, attributes.frame)) {
+                [visibleAttributes addObject:attributes];
+            }
+        }
+    }
+    return [visibleAttributes copy];
+}
+
+- (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.attributesBySection[indexPath.section][indexPath.item];
+}
+
+- (void)calculateContentSize
 {
     CGSize cellSize = [self cellSize];
     CGFloat contentLength = 0;
@@ -37,7 +61,7 @@
     self.collectionViewContentLength = contentLength;
 }
 
--(CGFloat)contentLengthForSection:(NSInteger)section withCellSize:(CGSize)cellSize
+- (CGFloat)contentLengthForSection:(NSInteger)section withCellSize:(CGSize)cellSize
 {
     NSInteger rowsInSection = [self rowsInSection:section];
 
@@ -68,19 +92,15 @@
     }
 }
 
-
-- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
+- (void)calculateLayoutAttributes
 {
-    NSMutableArray *attributes = [NSMutableArray array];
-
+    self.attributesBySection = [NSMutableArray array];
     for (NSInteger section = 0; section < [self.collectionView numberOfSections]; section++) {
-        [attributes addObjectsFromArray:[self layoutAttributesForItemsInSection:section inRect:rect]];
+        [self.attributesBySection addObject:[self layoutAttributesForItemsInSection:section]];
     }
-
-    return [attributes copy];
 }
 
-- (NSArray *)layoutAttributesForItemsInSection:(NSInteger)section inRect:(CGRect)rect
+- (NSArray *)layoutAttributesForItemsInSection:(NSInteger)section
 {
     NSMutableArray *attributes = [NSMutableArray array];
     for (NSInteger item = 0; item < [self.collectionView numberOfItemsInSection:section]; item++) {
@@ -103,22 +123,31 @@
     CGSize cellSize = [self cellSize];
     NSInteger rowOfItem = indexPath.item / self.numberOfItemsPerLine;
     NSInteger columnOfItem = indexPath.item % self.numberOfItemsPerLine;
+
     CGRect frame = CGRectZero;
 
-    frame.origin.x = self.sectionInset.left + (columnOfItem * cellSize.width) + (self.interitemSpacing * columnOfItem);
-    frame.origin.y = self.sectionInset.top + (rowOfItem * cellSize.height) + (self.lineSpacing * rowOfItem);
+    CGFloat sectionStart = [self startOfSection:indexPath.section];
+    if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
+        frame.origin.y = sectionStart;
+    } else {
+        frame.origin.x = sectionStart;
+    }
+
+    frame.origin.x += self.sectionInset.left + (columnOfItem * cellSize.width) + (self.interitemSpacing * columnOfItem);
+    frame.origin.y += self.sectionInset.top + (rowOfItem * cellSize.height) + (self.lineSpacing * rowOfItem);
     frame.size = cellSize;
 
     return frame;
 }
 
-- (CGSize)collectionViewContentSize
+- (CGFloat)startOfSection:(NSInteger)section
 {
-    if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
-        return CGSizeMake(self.collectionView.bounds.size.width, self.collectionViewContentLength);
-    } else {
-        return CGSizeMake(self.collectionViewContentLength, self.collectionView.bounds.size.height);
+    CGFloat startOfSection = 0;
+    CGSize cellSize = [self cellSize];
+    for (NSInteger index = 0; index < section; index++) {
+        startOfSection += [self contentLengthForSection:index withCellSize:cellSize];
     }
+    return startOfSection;
 }
 
 - (CGSize)cellSize
