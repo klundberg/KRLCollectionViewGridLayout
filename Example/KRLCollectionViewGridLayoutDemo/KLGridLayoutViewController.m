@@ -66,7 +66,15 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+
+    if (indexPath.section % 2 == 1) {
+        cell.contentView.backgroundColor = [UIColor blueColor];
+    } else {
+        cell.contentView.backgroundColor = [UIColor redColor];
+    }
+    
+    return cell;
 }
 
 @end
