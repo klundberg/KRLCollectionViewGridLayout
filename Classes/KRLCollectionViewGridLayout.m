@@ -15,6 +15,34 @@
 
 @implementation KRLCollectionViewGridLayout
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self sharedInit];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self sharedInit];
+    }
+    return self;
+}
+
+- (void)sharedInit
+{
+    _numberOfItemsPerLine = 1;
+    _aspectRatio = 1;
+    _sectionInset = UIEdgeInsetsZero;
+    _interitemSpacing = 10;
+    _lineSpacing = 10;
+    _scrollDirection = UICollectionViewScrollDirectionVertical;
+}
+
 - (void)prepareLayout
 {
     [self calculateContentSize];

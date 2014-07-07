@@ -40,6 +40,19 @@
     [super tearDown];
 }
 
+- (void)testLayoutDefaultValues
+{
+    assertThatInteger(layout.numberOfItemsPerLine, equalToInteger(1));
+    assertThatDouble(layout.aspectRatio, equalToDouble(1.0));
+    assertThatFloat(layout.sectionInset.top, equalToFloat(0));
+    assertThatFloat(layout.sectionInset.left, equalToFloat(0));
+    assertThatFloat(layout.sectionInset.bottom, equalToFloat(0));
+    assertThatFloat(layout.sectionInset.right, equalToFloat(0));
+    assertThatFloat(layout.interitemSpacing, equalToFloat(10));
+    assertThatFloat(layout.lineSpacing, equalToFloat(10));
+    assertThatInteger(layout.scrollDirection, equalToInteger(UICollectionViewScrollDirectionVertical));
+}
+
 - (void)testLayoutContentViewSizeUsesControllerWidthIfVerticallyScrolling
 {
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
