@@ -4,11 +4,29 @@
 [![License](https://img.shields.io/cocoapods/l/KRLCollectionViewGridLayout.svg?style=flat)](http://cocoadocs.org/docsets/KRLCollectionViewGridLayout)
 [![Platform](https://img.shields.io/cocoapods/p/KRLCollectionViewGridLayout.svg?style=flat)](http://cocoadocs.org/docsets/KRLCollectionViewGridLayout)
 
+This layout is an alternative to UICollectionViewFlowLayout that positions and sizes items using a defined number of columns and an aspect ratio property which force the size of cells, rather than the cells' size telling the layout how to position them (in the way UICollectionViewFlowLayout behaves). By default, this will always show the same number of items in a row no matter how large or small the collection view is.
+
+You can specify the number of items per line and the desired aspect ratio of all items (which is always width / height, regardless of scroll direction):
+
+    layout.numberOfItemsPerLine = 5;
+    layout.aspectRatio = 16.0/9.0;
+
+You can specify metrics similar to UICollectionViewFlowLayout, like so:
+
+    layout.sectionInset = UIEdgeInsetsMake(10,20,30,40);
+    layout.interitemSpacing = 15;
+    layout.lineSpacing = 5;
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    
+As of 0.1, this layout supports multiple sections, but no supplementary views and no per-section grid metrics.
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+
+iOS 6.0 or greater, and ARC.
 
 ## Installation
 

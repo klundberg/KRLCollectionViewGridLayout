@@ -50,6 +50,10 @@
 		791EEB591957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRLCollectionViewGridLayoutTest.m; sourceTree = "<group>"; };
 		791EEB5B1957DB2F009DC47A /* KRLSimpleCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRLSimpleCollectionViewController.h; sourceTree = "<group>"; };
 		791EEB5C1957DB2F009DC47A /* KRLSimpleCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRLSimpleCollectionViewController.m; sourceTree = "<group>"; };
+		791EEB7B196A59CF009DC47A /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
+		791EEB7C196A59CF009DC47A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		791EEB7D196A59CF009DC47A /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Rakefile; path = ../Rakefile; sourceTree = "<group>"; };
+		791EEB7E196A59CF009DC47A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		794C057718E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KRLCollectionViewGridLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		794C057A18E5217600A94FC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		794C057C18E5217600A94FC3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -123,6 +127,10 @@
 				791EEB4B1957DA9E009DC47A /* KRLCollectionViewGridLayoutTests */,
 				794C057918E5217600A94FC3 /* Frameworks */,
 				794C057818E5217600A94FC3 /* Products */,
+				791EEB7B196A59CF009DC47A /* CHANGELOG.md */,
+				791EEB7C196A59CF009DC47A /* LICENSE */,
+				791EEB7D196A59CF009DC47A /* Rakefile */,
+				791EEB7E196A59CF009DC47A /* README.md */,
 				791EEB3D1957D297009DC47A /* KRLCollectionViewGridLayout.podspec */,
 				0176EF3EC7C34E00A507A660 /* Pods.xcconfig */,
 				4E59B64EF204468F86652511 /* Pods-KRLCollectionViewGridLayoutTests.xcconfig */,
