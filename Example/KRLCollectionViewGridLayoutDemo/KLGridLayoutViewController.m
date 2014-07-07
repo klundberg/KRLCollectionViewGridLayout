@@ -48,7 +48,10 @@
     [super viewDidLoad];
 
     self.layout.numberOfItemsPerLine = 3;
-    self.layout.aspectRatio = 1.5;
+    self.layout.aspectRatio = 1;
+    self.layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.layout.interitemSpacing = 10;
+    self.layout.lineSpacing = 10;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

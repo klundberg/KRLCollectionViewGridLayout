@@ -128,4 +128,94 @@
     assertThatFloat(contentSize.width, equalToFloat(500));
 }
 
+- (void)testFramesForCellsWithOnePerLine
+{
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.aspectRatio = 1;
+    layout.numberOfItemsPerLine = 1;
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    layout.lineSpacing = 10;
+    layout.interitemSpacing = 10;
+
+    controller.items = @[@[@1,@2]];
+
+    [controller.view layoutIfNeeded];
+
+    UICollectionViewCell *cell1 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    UICollectionViewCell *cell2 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]];
+
+    assertThatFloat(cell1.frame.origin.x, equalToFloat(10));
+    assertThatFloat(cell1.frame.origin.y, equalToFloat(10));
+    assertThatFloat(cell1.frame.size.width, equalToFloat(480));
+    assertThatFloat(cell1.frame.size.height, equalToFloat(480));
+
+    assertThatFloat(cell2.frame.origin.x, equalToFloat(10));
+    assertThatFloat(cell2.frame.origin.y, equalToFloat(500));
+    assertThatFloat(cell2.frame.size.width, equalToFloat(480));
+    assertThatFloat(cell2.frame.size.height, equalToFloat(480));
+
+    assertThatFloat(layout.collectionViewContentSize.height, equalToFloat(990));
+    assertThatFloat(controller.collectionView.contentSize.height, equalToFloat(990));
+}
+
+- (void)testFramesForCellsWithTwoPerLine
+{
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.aspectRatio = 1;
+    layout.numberOfItemsPerLine = 2;
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    layout.lineSpacing = 10;
+    layout.interitemSpacing = 10;
+
+    controller.items = @[@[@1,@2]];
+
+    [controller.view layoutIfNeeded];
+
+    UICollectionViewCell *cell1 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    UICollectionViewCell *cell2 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]];
+
+    assertThatFloat(cell1.frame.origin.x, equalToFloat(10));
+    assertThatFloat(cell1.frame.origin.y, equalToFloat(10));
+    assertThatFloat(cell1.frame.size.width, equalToFloat(235));
+    assertThatFloat(cell1.frame.size.height, equalToFloat(235));
+
+    assertThatFloat(cell2.frame.origin.x, equalToFloat(255));
+    assertThatFloat(cell2.frame.origin.y, equalToFloat(10));
+    assertThatFloat(cell2.frame.size.width, equalToFloat(235));
+    assertThatFloat(cell2.frame.size.height, equalToFloat(235));
+
+    assertThatFloat(layout.collectionViewContentSize.height, equalToFloat(255));
+    assertThatFloat(controller.collectionView.contentSize.height, equalToFloat(255));
+}
+
+- (void)testAspectRatioAffectsFramesProperly
+{
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.aspectRatio = 2.0/1.0;
+    layout.numberOfItemsPerLine = 1;
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    layout.lineSpacing = 10;
+    layout.interitemSpacing = 10;
+
+    controller.items = @[@[@1,@2]];
+
+    [controller.view layoutIfNeeded];
+
+    UICollectionViewCell *cell1 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    UICollectionViewCell *cell2 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]];
+
+    assertThatFloat(cell1.frame.origin.x, equalToFloat(10));
+    assertThatFloat(cell1.frame.origin.y, equalToFloat(10));
+    assertThatFloat(cell1.frame.size.width, equalToFloat(480));
+    assertThatFloat(cell1.frame.size.height, equalToFloat(240));
+
+    assertThatFloat(cell2.frame.origin.x, equalToFloat(10));
+    assertThatFloat(cell2.frame.origin.y, equalToFloat(260));
+    assertThatFloat(cell2.frame.size.width, equalToFloat(480));
+    assertThatFloat(cell2.frame.size.height, equalToFloat(240));
+
+    assertThatFloat(layout.collectionViewContentSize.height, equalToFloat(510));
+    assertThatFloat(controller.collectionView.contentSize.height, equalToFloat(510));
+}
+
 @end
