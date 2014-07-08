@@ -1,0 +1,6 @@
+language: objective-c
+xcode_workspace: Example/KRLCollectionViewGridLayoutDemo.xcworkspace
+xcode_scheme: KRLCollectionViewGridLayoutDemo
+before_install:
+  - cd Example
+  - pod install
