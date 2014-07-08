@@ -4,6 +4,8 @@ xcode_scheme: KRLCollectionViewGridLayoutDemo
 xcode_sdk: iphonesimulator7.1
 before_install:
   - gem update cocoapods
+  - brew update
+  - brew upgrade xctool
 install:
   - cd Example
   - pod install
