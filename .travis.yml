@@ -6,3 +6,4 @@ before_install:
 install:
   - cd Example
   - pod install
+  - cd ..
