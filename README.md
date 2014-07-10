@@ -20,7 +20,7 @@ You can specify metrics similar to UICollectionViewFlowLayout, like so:
     layout.lineSpacing = 5;
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
-As of 0.1, this layout supports multiple sections, but no supplementary views and no per-section grid metrics.
+As of 0.1.x, this layout supports multiple sections, but no supplementary views and no per-section grid metrics.
 
 ## Usage
 
