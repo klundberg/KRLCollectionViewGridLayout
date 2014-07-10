@@ -76,6 +76,11 @@
     return self.attributesBySection[indexPath.section][indexPath.item];
 }
 
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
+{
+    return !CGSizeEqualToSize(newBounds.size, self.collectionView.bounds.size);
+}
+
 - (void)calculateContentSize
 {
     CGSize cellSize = [self cellSize];

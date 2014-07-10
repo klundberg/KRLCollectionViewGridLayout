@@ -322,4 +322,35 @@
     assertThatFloat(cell2.frame.size.height, equalToFloat(480));
 }
 
+- (void)testFramesChangeWhenBoundsChange
+{
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.aspectRatio = 1;
+    layout.numberOfItemsPerLine = 2;
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    layout.lineSpacing = 10;
+    layout.interitemSpacing = 10;
+
+    controller.items = @[@[@1,@2]];
+
+    [controller.view layoutIfNeeded];
+
+    controller.view.frame = CGRectMake(0, 0, 250, 300);
+
+    [controller.view layoutIfNeeded];
+
+    UICollectionViewCell *cell1 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    UICollectionViewCell *cell2 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]];
+
+    assertThatFloat(cell1.frame.origin.x, equalToFloat(10));
+    assertThatFloat(cell1.frame.origin.y, equalToFloat(10));
+    assertThatFloat(cell1.frame.size.width, equalToFloat(110));
+    assertThatFloat(cell1.frame.size.height, equalToFloat(110));
+
+    assertThatFloat(cell2.frame.origin.x, equalToFloat(130));
+    assertThatFloat(cell2.frame.origin.y, equalToFloat(10));
+    assertThatFloat(cell2.frame.size.width, equalToFloat(110));
+    assertThatFloat(cell2.frame.size.height, equalToFloat(110));
+}
+
 @end
