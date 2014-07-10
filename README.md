@@ -25,6 +25,7 @@ As of 0.1, this layout supports multiple sections, but no supplementary views an
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+You can either run unit tests on the library itself, or run the sample project for a visual demonstration.
 
 ## Requirements
 
@@ -41,7 +42,12 @@ it, simply add the following line to your Podfile:
 
 Kevin Lundberg, kevinrlundberg@gmail.com
 
+## Contributions
+
+Pull requests are welcome! Please include unit tests for any bugfixes or new features.
+
 ## License
 
 KRLCollectionViewGridLayout is available under the MIT license. See the LICENSE file for more info.
+
 
