@@ -1,5 +1,4 @@
 PODS:
-  - KRLCollectionViewGridLayout (0.1.0)
   - OCHamcrest (4.0.1)
   - OCMockito (1.3.0):
     - OCHamcrest (~> 4.0)
@@ -7,15 +6,9 @@ PODS:
   - TPWeakProxy (1.0.0)
 
 DEPENDENCIES:
-  - KRLCollectionViewGridLayout (from `../KRLCollectionViewGridLayout.podspec`)
   - OCMockito
 
-EXTERNAL SOURCES:
-  KRLCollectionViewGridLayout:
-    :path: ../KRLCollectionViewGridLayout.podspec
-
 SPEC CHECKSUMS:
-  KRLCollectionViewGridLayout: df591a0cf5d3927240089577ea7d0e7cb6f5e986
   OCHamcrest: b464725bbb48d0f1cd9c6f4ec3cb35fe0c4f2b94
   OCMockito: eca2670b3ce4a457d316b046a36d6f2b980a4da7
   TPWeakProxy: a23251ba7fbe268c93f809cc072ef834f5063798

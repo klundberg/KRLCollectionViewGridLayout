@@ -23,6 +23,7 @@
 		794C058E18E5217600A94FC3 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794C058C18E5217600A94FC3 /* Main_iPhone.storyboard */; };
 		794C059118E5217600A94FC3 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794C058F18E5217600A94FC3 /* Main_iPad.storyboard */; };
 		794C059618E5217600A94FC3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 794C059518E5217600A94FC3 /* Images.xcassets */; };
+		79D757D4196E51370044DCFF /* KRLCollectionViewGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D757D3196E51370044DCFF /* KRLCollectionViewGridLayout.m */; };
 		79EBDAE6194C1051004A6BD7 /* KLGridLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EBDAE5194C1051004A6BD7 /* KLGridLayoutViewController.m */; };
 		CC9E4BB89FE54B8F9099487B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99351E477315433E912DA664 /* libPods.a */; };
 		E326D5432FCE495185EC0D6A /* libPods-KRLCollectionViewGridLayoutTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B349C1D612246D5820B6E8A /* libPods-KRLCollectionViewGridLayoutTests.a */; };
@@ -69,6 +70,8 @@
 		794C059518E5217600A94FC3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		794C059C18E5217600A94FC3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		79D757D0196B86E70044DCFF /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
+		79D757D2196E51370044DCFF /* KRLCollectionViewGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRLCollectionViewGridLayout.h; path = ../Classes/KRLCollectionViewGridLayout.h; sourceTree = "<group>"; };
+		79D757D3196E51370044DCFF /* KRLCollectionViewGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRLCollectionViewGridLayout.m; path = ../Classes/KRLCollectionViewGridLayout.m; sourceTree = "<group>"; };
 		79EBDAE4194C1051004A6BD7 /* KLGridLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLGridLayoutViewController.h; sourceTree = "<group>"; };
 		79EBDAE5194C1051004A6BD7 /* KLGridLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLGridLayoutViewController.m; sourceTree = "<group>"; };
 		99351E477315433E912DA664 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +127,7 @@
 		794C056E18E5217600A94FC3 = {
 			isa = PBXGroup;
 			children = (
-				79D757D0196B86E70044DCFF /* .travis.yml */,
+				79D757D1196E511E0044DCFF /* KRLCollectionViewGridLayout */,
 				794C058018E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo */,
 				791EEB4B1957DA9E009DC47A /* KRLCollectionViewGridLayoutTests */,
 				794C057918E5217600A94FC3 /* Frameworks */,
@@ -134,6 +137,7 @@
 				791EEB7D196A59CF009DC47A /* Rakefile */,
 				791EEB7E196A59CF009DC47A /* README.md */,
 				791EEB3D1957D297009DC47A /* KRLCollectionViewGridLayout.podspec */,
+				79D757D0196B86E70044DCFF /* .travis.yml */,
 				0176EF3EC7C34E00A507A660 /* Pods.xcconfig */,
 				4E59B64EF204468F86652511 /* Pods-KRLCollectionViewGridLayoutTests.xcconfig */,
 			);
@@ -185,6 +189,15 @@
 				794C058818E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		79D757D1196E511E0044DCFF /* KRLCollectionViewGridLayout */ = {
+			isa = PBXGroup;
+			children = (
+				79D757D2196E51370044DCFF /* KRLCollectionViewGridLayout.h */,
+				79D757D3196E51370044DCFF /* KRLCollectionViewGridLayout.m */,
+			);
+			name = KRLCollectionViewGridLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79D757D4196E51370044DCFF /* KRLCollectionViewGridLayout.m in Sources */,
 				794C058718E5217600A94FC3 /* main.m in Sources */,
 				794C058B18E5217600A94FC3 /* KLAppDelegate.m in Sources */,
 				79EBDAE6194C1051004A6BD7 /* KLGridLayoutViewController.m in Sources */,
