@@ -225,11 +225,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 794C05AC18E5217600A94FC3 /* Build configuration list for PBXNativeTarget "KRLCollectionViewGridLayoutDemo" */;
 			buildPhases = (
-				723194419BBC4AED8F2FFA7A /* Check Pods Manifest.lock */,
 				794C057318E5217600A94FC3 /* Sources */,
 				794C057418E5217600A94FC3 /* Frameworks */,
 				794C057518E5217600A94FC3 /* Resources */,
-				401226D9B460465C8C9CA3FB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -313,21 +311,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		401226D9B460465C8C9CA3FB /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		61A7F742CBA14ACA96795812 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,21 +324,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-KRLCollectionViewGridLayoutTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		723194419BBC4AED8F2FFA7A /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
