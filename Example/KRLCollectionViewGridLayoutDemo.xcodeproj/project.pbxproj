@@ -25,7 +25,6 @@
 		794C059618E5217600A94FC3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 794C059518E5217600A94FC3 /* Images.xcassets */; };
 		79D757D4196E51370044DCFF /* KRLCollectionViewGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D757D3196E51370044DCFF /* KRLCollectionViewGridLayout.m */; };
 		79EBDAE6194C1051004A6BD7 /* KLGridLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EBDAE5194C1051004A6BD7 /* KLGridLayoutViewController.m */; };
-		CC9E4BB89FE54B8F9099487B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99351E477315433E912DA664 /* libPods.a */; };
 		E326D5432FCE495185EC0D6A /* libPods-KRLCollectionViewGridLayoutTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B349C1D612246D5820B6E8A /* libPods-KRLCollectionViewGridLayoutTests.a */; };
 /* End PBXBuildFile section */
 
@@ -96,7 +95,6 @@
 				794C057D18E5217600A94FC3 /* CoreGraphics.framework in Frameworks */,
 				794C057F18E5217600A94FC3 /* UIKit.framework in Frameworks */,
 				794C057B18E5217600A94FC3 /* Foundation.framework in Frameworks */,
-				CC9E4BB89FE54B8F9099487B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@
 
 #import "KRLSimpleCollectionViewController.h"
 
-#import <KRLCollectionViewGridLayout/KRLCollectionViewGridLayout.h>
+#import "KRLCollectionViewGridLayout.h"
 
 #define HC_SHORTHAND 1
 #import <OCHamcrest/OCHamcrest.h>

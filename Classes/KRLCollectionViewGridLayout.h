@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ A layout that positions and sizes cells based on the numberOfItemsPerLine and aspectRatio properties.
+ */
 @interface KRLCollectionViewGridLayout : UICollectionViewLayout
 
 /**
