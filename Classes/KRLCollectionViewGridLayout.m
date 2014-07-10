@@ -150,19 +150,18 @@
 {
     CGSize cellSize = [self cellSize];
     NSInteger rowOfItem = indexPath.item / self.numberOfItemsPerLine;
-    NSInteger columnOfItem = indexPath.item % self.numberOfItemsPerLine;
+    NSInteger locationInRowOfItem = indexPath.item % self.numberOfItemsPerLine;
 
     CGRect frame = CGRectZero;
 
     CGFloat sectionStart = [self startOfSection:indexPath.section];
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
-        frame.origin.y = sectionStart;
+        frame.origin.x = self.sectionInset.left + (locationInRowOfItem * cellSize.width) + (self.interitemSpacing * locationInRowOfItem);
+        frame.origin.y = sectionStart + self.sectionInset.top + (rowOfItem * cellSize.height) + (self.lineSpacing * rowOfItem);
     } else {
-        frame.origin.x = sectionStart;
+        frame.origin.x = sectionStart + self.sectionInset.left + (rowOfItem * cellSize.width) + (self.lineSpacing * rowOfItem);
+        frame.origin.y = self.sectionInset.top + (locationInRowOfItem * cellSize.height) + (self.interitemSpacing * locationInRowOfItem);
     }
-
-    frame.origin.x += self.sectionInset.left + (columnOfItem * cellSize.width) + (self.interitemSpacing * columnOfItem);
-    frame.origin.y += self.sectionInset.top + (rowOfItem * cellSize.height) + (self.lineSpacing * rowOfItem);
     frame.size = cellSize;
 
     return frame;
