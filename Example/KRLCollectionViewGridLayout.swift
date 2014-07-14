@@ -17,7 +17,7 @@ class KRLCollectionViewGridLayout : UICollectionViewLayout {
         }
     }
     }
-    var sectionInset: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) {
+    var sectionInset: UIEdgeInsets = UIEdgeInsetsZero {
     didSet {
         if !UIEdgeInsetsEqualToEdgeInsets(sectionInset, oldValue) {
             self.invalidateLayout()
@@ -100,6 +100,14 @@ class KRLCollectionViewGridLayout : UICollectionViewLayout {
         }
     }
 
+    var insetLength: CGFloat {
+        if self.scrollDirection == .Vertical {
+            return self.sectionInset.top + self.sectionInset.bottom
+        } else {
+            return self.sectionInset.left + self.sectionInset.right
+        }
+    }
+
     var totalItemSpacing: CGFloat {
         return CGFloat(self.numberOfItemsPerLine - 1) * self.interitemSpacing
     }
@@ -110,14 +118,6 @@ class KRLCollectionViewGridLayout : UICollectionViewLayout {
 
     func totalLineSpacing(section: Int) -> CGFloat {
         return CGFloat(self.rowsInSection(section) - 1) * self.lineSpacing;
-    }
-
-    var insetLength: CGFloat {
-        if self.scrollDirection == .Vertical {
-            return self.sectionInset.top + self.sectionInset.bottom
-        } else {
-            return self.sectionInset.left + self.sectionInset.right
-        }
     }
 
     func totalRowLength(section: Int) -> CGFloat {
@@ -134,18 +134,17 @@ class KRLCollectionViewGridLayout : UICollectionViewLayout {
     }
 
     func calculateLayoutAttributes() {
-        self.attributesBySection = [[UICollectionViewLayoutAttributes]]()
-        for section in 0..<self.collectionView.numberOfSections() {
-            self.attributesBySection += self.layoutAttributesForItemsInSection(section)
-        }
+        self.attributesBySection = (0..<self.collectionView.numberOfSections()).map(self.layoutAttributesForItemsInSection)
     }
 
     func layoutAttributesForItemsInSection(section: Int) -> [UICollectionViewLayoutAttributes] {
-        var attributes = [UICollectionViewLayoutAttributes]()
-        for item in 0..<self.collectionView.numberOfItemsInSection(section) {
-            attributes += self.layoutAttributesForCellAtIndexPath(NSIndexPath(forItem:item, inSection:section))
+        return self.indexPathsInSection(section).map { self.layoutAttributesForCellAtIndexPath($0) }
+    }
+
+    func indexPathsInSection(section: Int) -> [NSIndexPath] {
+        return (0..<self.collectionView.numberOfItemsInSection(section)).map {
+            NSIndexPath(forItem: $0, inSection: section)
         }
-        return attributes
     }
 
     func layoutAttributesForCellAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes {
@@ -173,11 +172,7 @@ class KRLCollectionViewGridLayout : UICollectionViewLayout {
     }
 
     func startOfSection(section: Int) -> CGFloat {
-        var startOfSection: CGFloat = 0
-        for index in 0..<section {
-            startOfSection += self.contentLength(section)
-        }
-        return startOfSection
+        return (0..<section).map(self.contentLength).reduce(0, combine: +)
     }
 
     override func collectionViewContentSize() -> CGSize {
@@ -191,11 +186,7 @@ class KRLCollectionViewGridLayout : UICollectionViewLayout {
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [AnyObject]! {
         var visibleAttributes = [UICollectionViewLayoutAttributes]()
         for sectionAttributes in self.attributesBySection {
-            for itemAttributes in sectionAttributes {
-                if (rect.intersects(itemAttributes.frame)) {
-                    visibleAttributes += itemAttributes
-                }
-            }
+            visibleAttributes += sectionAttributes.filter { rect.intersects($0.frame) }
         }
         return visibleAttributes
     }
