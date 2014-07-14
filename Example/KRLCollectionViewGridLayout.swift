@@ -89,15 +89,11 @@ class KRLCollectionViewGridLayout : UICollectionViewLayout {
     }
 
     var usableSpace: CGFloat {
-        if self.scrollDirection == .Vertical {
-            return self.collectionViewContentSize().width
-                - self.insetLength
-                - self.totalItemSpacing
-        } else {
-            return self.collectionViewContentSize().height
-                - self.insetLength
-                - self.totalItemSpacing
-        }
+        let collectionViewLength = (self.scrollDirection == .Vertical
+            ? self.collectionViewContentSize().width
+            : self.collectionViewContentSize().height)
+
+        return collectionViewLength - self.insetLength - self.totalItemSpacing
     }
 
     var insetLength: CGFloat {
@@ -158,17 +154,17 @@ class KRLCollectionViewGridLayout : UICollectionViewLayout {
         let rowOfItem = CGFloat(indexPath.item / self.numberOfItemsPerLine)
         let locationInRowOfItem = CGFloat(indexPath.item % self.numberOfItemsPerLine)
 
-        var frame = CGRect(origin: CGPoint(), size: cellSize)
+        var origin = CGPoint()
 
         let sectionStart = self.startOfSection(indexPath.section)
         if self.scrollDirection == .Vertical {
-            frame.origin.x = self.sectionInset.left + (locationInRowOfItem * cellSize.width) + (self.interitemSpacing * locationInRowOfItem)
-            frame.origin.y = sectionStart + self.sectionInset.top + (rowOfItem * cellSize.height) + (self.lineSpacing * rowOfItem)
+            origin.x = self.sectionInset.left + (locationInRowOfItem * cellSize.width) + (self.interitemSpacing * locationInRowOfItem)
+            origin.y = sectionStart + self.sectionInset.top + (rowOfItem * cellSize.height) + (self.lineSpacing * rowOfItem)
         } else {
-            frame.origin.x = sectionStart + self.sectionInset.left + (rowOfItem * cellSize.width) + (self.lineSpacing * rowOfItem)
-            frame.origin.y = self.sectionInset.top + (locationInRowOfItem * cellSize.height) + (self.interitemSpacing * locationInRowOfItem)
+            origin.x = sectionStart + self.sectionInset.left + (rowOfItem * cellSize.width) + (self.lineSpacing * rowOfItem)
+            origin.y = self.sectionInset.top + (locationInRowOfItem * cellSize.height) + (self.interitemSpacing * locationInRowOfItem)
         }
-        return frame
+        return CGRect(origin: origin, size: cellSize)
     }
 
     func startOfSection(section: Int) -> CGFloat {
