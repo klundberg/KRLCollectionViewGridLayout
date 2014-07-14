@@ -7,7 +7,8 @@
 //
 
 #import "KLGridLayoutViewController.h"
-#import "KRLCollectionViewGridLayout.h"
+//#import "KRLCollectionViewGridLayout.h"
+#import "KRLCollectionViewGridLayoutDemo-Swift.h"
 
 @interface KLGridLayoutViewController () <UIActionSheetDelegate>
 

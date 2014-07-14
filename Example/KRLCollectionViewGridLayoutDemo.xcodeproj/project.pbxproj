@@ -14,6 +14,7 @@
 		791EEB501957DA9E009DC47A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 791EEB4E1957DA9E009DC47A /* InfoPlist.strings */; };
 		791EEB5A1957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 791EEB591957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m */; };
 		791EEB5D1957DB2F009DC47A /* KRLSimpleCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791EEB5C1957DB2F009DC47A /* KRLSimpleCollectionViewController.m */; };
+		7941E39C19735C4500C13886 /* KRLCollectionViewGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7941E39B19735C4500C13886 /* KRLCollectionViewGridLayout.swift */; };
 		794C057B18E5217600A94FC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794C057A18E5217600A94FC3 /* Foundation.framework */; };
 		794C057D18E5217600A94FC3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794C057C18E5217600A94FC3 /* CoreGraphics.framework */; };
 		794C057F18E5217600A94FC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794C057E18E5217600A94FC3 /* UIKit.framework */; };
@@ -23,7 +24,6 @@
 		794C058E18E5217600A94FC3 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794C058C18E5217600A94FC3 /* Main_iPhone.storyboard */; };
 		794C059118E5217600A94FC3 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 794C058F18E5217600A94FC3 /* Main_iPad.storyboard */; };
 		794C059618E5217600A94FC3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 794C059518E5217600A94FC3 /* Images.xcassets */; };
-		79D757D4196E51370044DCFF /* KRLCollectionViewGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D757D3196E51370044DCFF /* KRLCollectionViewGridLayout.m */; };
 		79EBDAE6194C1051004A6BD7 /* KLGridLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EBDAE5194C1051004A6BD7 /* KLGridLayoutViewController.m */; };
 		E326D5432FCE495185EC0D6A /* libPods-KRLCollectionViewGridLayoutTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B349C1D612246D5820B6E8A /* libPods-KRLCollectionViewGridLayoutTests.a */; };
 /* End PBXBuildFile section */
@@ -53,6 +53,8 @@
 		791EEB7C196A59CF009DC47A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		791EEB7D196A59CF009DC47A /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Rakefile; path = ../Rakefile; sourceTree = "<group>"; };
 		791EEB7E196A59CF009DC47A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		7941E39A19735C4500C13886 /* KRLCollectionViewGridLayoutDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KRLCollectionViewGridLayoutDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		7941E39B19735C4500C13886 /* KRLCollectionViewGridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRLCollectionViewGridLayout.swift; sourceTree = "<group>"; };
 		794C057718E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KRLCollectionViewGridLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		794C057A18E5217600A94FC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		794C057C18E5217600A94FC3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -67,6 +69,7 @@
 		794C059018E5217600A94FC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		794C059518E5217600A94FC3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		794C059C18E5217600A94FC3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		79BA51D6197380E500C5D470 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		79D757D0196B86E70044DCFF /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		79D757D2196E51370044DCFF /* KRLCollectionViewGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRLCollectionViewGridLayout.h; path = ../Classes/KRLCollectionViewGridLayout.h; sourceTree = "<group>"; };
 		79D757D3196E51370044DCFF /* KRLCollectionViewGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRLCollectionViewGridLayout.m; path = ../Classes/KRLCollectionViewGridLayout.m; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 		794C056E18E5217600A94FC3 = {
 			isa = PBXGroup;
 			children = (
+				79BA51D6197380E500C5D470 /* MyPlayground.playground */,
 				79D757D1196E511E0044DCFF /* KRLCollectionViewGridLayout */,
 				794C058018E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo */,
 				791EEB4B1957DA9E009DC47A /* KRLCollectionViewGridLayoutTests */,
@@ -192,6 +196,8 @@
 			children = (
 				79D757D2196E51370044DCFF /* KRLCollectionViewGridLayout.h */,
 				79D757D3196E51370044DCFF /* KRLCollectionViewGridLayout.m */,
+				7941E39B19735C4500C13886 /* KRLCollectionViewGridLayout.swift */,
+				7941E39A19735C4500C13886 /* KRLCollectionViewGridLayoutDemo-Bridging-Header.h */,
 			);
 			name = KRLCollectionViewGridLayout;
 			sourceTree = "<group>";
@@ -340,9 +346,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79D757D4196E51370044DCFF /* KRLCollectionViewGridLayout.m in Sources */,
 				794C058718E5217600A94FC3 /* main.m in Sources */,
 				794C058B18E5217600A94FC3 /* KLAppDelegate.m in Sources */,
+				7941E39C19735C4500C13886 /* KRLCollectionViewGridLayout.swift in Sources */,
 				79EBDAE6194C1051004A6BD7 /* KLGridLayoutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,11 +520,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KRLCollectionViewGridLayoutDemo/KRLCollectionViewGridLayoutDemo-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/KRLCollectionViewGridLayoutDemo/KRLGridLayoutDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "KRLCollectionViewGridLayoutDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -528,11 +538,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KRLCollectionViewGridLayoutDemo/KRLCollectionViewGridLayoutDemo-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/KRLCollectionViewGridLayoutDemo/KRLGridLayoutDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "KRLCollectionViewGridLayoutDemo-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
