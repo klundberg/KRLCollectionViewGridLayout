@@ -11,7 +11,7 @@ import UIKit
 private let reuseIdentifier = "Cell"
 private let headerFooterIdentifier = "headerFooter"
 
-class GridLayoutCollectionViewController: UICollectionViewController {
+class GridLayoutCollectionViewController: UICollectionViewController, UIActionSheetDelegate {
 
     var layout: KRLCollectionViewGridLayout {
         return self.collectionView?.collectionViewLayout as KRLCollectionViewGridLayout
@@ -36,6 +36,14 @@ class GridLayoutCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 25
+    }
+
+    @IBAction func changeColumnsTapped(sender: AnyObject?) {
+        UIActionSheet(title: "Choose how many columns", delegate: self, cancelButtonTitle: nil, destructiveButtonTitle: nil, otherButtonTitles: "1","2","3","4","5","6").showInView(self.view)
+    }
+
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        self.layout.numberOfItemsPerLine = actionSheet.buttonTitleAtIndex(buttonIndex).toInt()!
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

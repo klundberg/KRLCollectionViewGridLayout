@@ -70,7 +70,7 @@
                     <navigationItem key="navigationItem" id="uo1-b0-ze0">
                         <barButtonItem key="rightBarButtonItem" title="Columns" id="4Av-Z1-Gus">
                             <connections>
-                                <action selector="changeColumnsTapped:" destination="zYQ-sk-7H9" id="ey3-Fs-scz"/>
+                                <action selector="changeColumnsTapped:" destination="zYQ-sk-7H9" id="EWO-VY-DIc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
