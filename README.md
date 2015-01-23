@@ -19,8 +19,15 @@ You can specify metrics similar to UICollectionViewFlowLayout, like so:
     layout.interitemSpacing = 15;
     layout.lineSpacing = 5;
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+
+You can also add headers and footers to each section similar to UICollectionViewFlowLayout:
+
+    layout.headerReferenceSize = CGSizeMake(44,44);
+    layout.footerReferenceSize = CGSizeMake(100,100);
+
+In vertical scrolling mode, only the height matters; in horizontal scrolling mode, only the width matters. A size of 0 in these dimensions will not try to create a view.
     
-As of 0.1.x, this layout supports multiple sections, but no supplementary views and no per-section grid metrics.
+As of 0.2.x, this layout supports multiple sections and header/footer views. However there is no functionality yet for per-section metrics.
 
 ## Usage
 
@@ -30,6 +37,8 @@ You can either run unit tests on the library itself, or run the sample project f
 ## Requirements
 
 iOS 6.0 or greater, and ARC.
+
+Example project requires Xcode 6, can only run in iOS 7.0+. 
 
 ## Installation
 
