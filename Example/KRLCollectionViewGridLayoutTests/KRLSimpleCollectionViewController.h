@@ -12,6 +12,6 @@
 
 @property (nonatomic, copy) NSArray *items;
 
-@property (nonatomic, copy, readonly) NSSet *visibleSupplementaryViews;
+@property (nonatomic, copy, readonly) NSMutableDictionary *visibleSupplementaryViews;
 
 @end

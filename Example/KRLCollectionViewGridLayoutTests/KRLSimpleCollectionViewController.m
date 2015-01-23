@@ -10,7 +10,7 @@
 
 @interface KRLSimpleCollectionViewController ()
 
-@property (nonatomic, copy, readwrite) NSSet *visibleSupplementaryViews;
+@property (nonatomic, copy, readwrite) NSMutableDictionary *visibleSupplementaryViews;
 
 @end
 
@@ -28,7 +28,9 @@
 {
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
-        _visibleSupplementaryViews = [NSSet set];
+        _visibleSupplementaryViews = [NSMutableDictionary dictionary];
+        _visibleSupplementaryViews[UICollectionElementKindSectionHeader] = [NSMutableDictionary dictionary];
+        _visibleSupplementaryViews[UICollectionElementKindSectionFooter] = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -60,15 +62,14 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headerfooter" forIndexPath:indexPath];
-    self.visibleSupplementaryViews = [self.visibleSupplementaryViews setByAddingObject:view];
+    self.visibleSupplementaryViews[kind][indexPath] = view;
     return view;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingSupplementaryView:(UICollectionReusableView *)view forElementOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath
 {
-    NSMutableSet *set = [self.visibleSupplementaryViews mutableCopy];
-    [set removeObject:view];
-    self.visibleSupplementaryViews = set;
+    NSMutableDictionary *viewsForKind = self.visibleSupplementaryViews[elementKind];
+    [viewsForKind removeObjectForKey:indexPath];
 }
 
 @end

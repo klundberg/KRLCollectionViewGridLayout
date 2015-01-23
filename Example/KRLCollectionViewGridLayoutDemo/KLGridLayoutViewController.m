@@ -8,6 +8,7 @@
 
 #import "KLGridLayoutViewController.h"
 #import "KRLCollectionViewGridLayout.h"
+#import "KRLCollectionViewGridLayoutDemo-Swift.h"
 
 @interface KLGridLayoutViewController () <UIActionSheetDelegate>
 
@@ -47,11 +48,11 @@
 {
     [super viewDidLoad];
 
-    self.layout.numberOfItemsPerLine = 3;
-    self.layout.aspectRatio = 1;
     self.layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
-    self.layout.interitemSpacing = 10;
-    self.layout.lineSpacing = 10;
+
+    UINib *headerFooterNib = [UINib nibWithNibName:@"HeaderFooterView" bundle:nil];
+    [self.collectionView registerNib:headerFooterNib forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerfooter"];
+    [self.collectionView registerNib:headerFooterNib forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"headerfooter"];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -75,6 +76,14 @@
     }
     
     return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    HeaderFooterView *view = (id)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headerfooter" forIndexPath:indexPath];
+
+    view.label.text = kind;
+    return view;
 }
 
 @end
