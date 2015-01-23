@@ -39,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4E59B64EF204468F86652511 /* Pods-KRLCollectionViewGridLayoutTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRLCollectionViewGridLayoutTests.xcconfig"; path = "Pods/Pods-KRLCollectionViewGridLayoutTests.xcconfig"; sourceTree = "<group>"; };
+		301AB32187E7118F2DAC1925 /* Pods-KRLCollectionViewGridLayoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRLCollectionViewGridLayoutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KRLCollectionViewGridLayoutTests/Pods-KRLCollectionViewGridLayoutTests.release.xcconfig"; sourceTree = "<group>"; };
 		5B349C1D612246D5820B6E8A /* libPods-KRLCollectionViewGridLayoutTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KRLCollectionViewGridLayoutTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		791EEB3D1957D297009DC47A /* KRLCollectionViewGridLayout.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = KRLCollectionViewGridLayout.podspec; path = ../KRLCollectionViewGridLayout.podspec; sourceTree = "<group>"; };
 		791EEB471957DA9E009DC47A /* KRLCollectionViewGridLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KRLCollectionViewGridLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +72,7 @@
 		79D757D3196E51370044DCFF /* KRLCollectionViewGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRLCollectionViewGridLayout.m; path = ../Classes/KRLCollectionViewGridLayout.m; sourceTree = "<group>"; };
 		79EBDAE4194C1051004A6BD7 /* KLGridLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLGridLayoutViewController.h; sourceTree = "<group>"; };
 		79EBDAE5194C1051004A6BD7 /* KLGridLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLGridLayoutViewController.m; sourceTree = "<group>"; };
+		9842044B85FFFA844B76A5C6 /* Pods-KRLCollectionViewGridLayoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRLCollectionViewGridLayoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KRLCollectionViewGridLayoutTests/Pods-KRLCollectionViewGridLayoutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99351E477315433E912DA664 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		780B2961A5FF2D0A10C9A3CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9842044B85FFFA844B76A5C6 /* Pods-KRLCollectionViewGridLayoutTests.debug.xcconfig */,
+				301AB32187E7118F2DAC1925 /* Pods-KRLCollectionViewGridLayoutTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		791EEB4B1957DA9E009DC47A /* KRLCollectionViewGridLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +145,7 @@
 				791EEB7E196A59CF009DC47A /* README.md */,
 				791EEB3D1957D297009DC47A /* KRLCollectionViewGridLayout.podspec */,
 				79D757D0196B86E70044DCFF /* .travis.yml */,
-				4E59B64EF204468F86652511 /* Pods-KRLCollectionViewGridLayoutTests.xcconfig */,
+				780B2961A5FF2D0A10C9A3CC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -321,7 +331,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-KRLCollectionViewGridLayoutTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KRLCollectionViewGridLayoutTests/Pods-KRLCollectionViewGridLayoutTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -395,7 +405,7 @@
 /* Begin XCBuildConfiguration section */
 		791EEB561957DA9E009DC47A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E59B64EF204468F86652511 /* Pods-KRLCollectionViewGridLayoutTests.xcconfig */;
+			baseConfigurationReference = 9842044B85FFFA844B76A5C6 /* Pods-KRLCollectionViewGridLayoutTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KRLCollectionViewGridLayoutDemo.app/KRLCollectionViewGridLayoutDemo";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -419,7 +429,7 @@
 		};
 		791EEB571957DA9E009DC47A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E59B64EF204468F86652511 /* Pods-KRLCollectionViewGridLayoutTests.xcconfig */;
+			baseConfigurationReference = 301AB32187E7118F2DAC1925 /* Pods-KRLCollectionViewGridLayoutTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KRLCollectionViewGridLayoutDemo.app/KRLCollectionViewGridLayoutDemo";
 				FRAMEWORK_SEARCH_PATHS = (
