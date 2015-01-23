@@ -13,8 +13,8 @@ private let headerFooterIdentifier = "headerFooter"
 
 class GridLayoutCollectionViewController: UICollectionViewController {
 
-    var layout: KRLCollectionViewGridLayout! {
-        return self.collectionView?.collectionViewLayout as? KRLCollectionViewGridLayout
+    var layout: KRLCollectionViewGridLayout {
+        return self.collectionView?.collectionViewLayout as KRLCollectionViewGridLayout
     }
 
     override func viewDidLoad() {
@@ -32,6 +32,7 @@ class GridLayoutCollectionViewController: UICollectionViewController {
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 2
     }
+
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 25
