@@ -522,4 +522,21 @@
     assertThatDouble(cell2.frame.size.height, equalTo(@110));
 }
 
+- (void)testNoHeadersOrFootersMeansViewsArentAddedForThem
+{
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.aspectRatio = 1;
+    layout.numberOfItemsPerLine = 2;
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    layout.lineSpacing = 10;
+    layout.interitemSpacing = 10;
+
+    controller.items = @[@[@1,@2]];
+
+    [controller.view layoutIfNeeded];
+
+    assertThat(controller.visibleSupplementaryViews[UICollectionElementKindSectionHeader], isEmpty());
+    assertThat(controller.visibleSupplementaryViews[UICollectionElementKindSectionFooter], isEmpty());
+}
+
 @end

@@ -204,6 +204,12 @@
 
 - (UICollectionViewLayoutAttributes *)headerAttributesForIndexPath:(NSIndexPath *)path
 {
+    if (self.scrollDirection == UICollectionViewScrollDirectionVertical && self.headerReferenceSize.height == 0) {
+        return nil;
+    } else if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal && self.headerReferenceSize.width == 0) {
+        return nil;
+    }
+
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:path];
 
     CGRect frame = CGRectZero;
@@ -230,6 +236,12 @@
 
 - (UICollectionViewLayoutAttributes *)footerAttributesForIndexPath:(NSIndexPath *)path
 {
+    if (self.scrollDirection == UICollectionViewScrollDirectionVertical && self.footerReferenceSize.height == 0) {
+        return nil;
+    } else if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal && self.footerReferenceSize.width == 0) {
+        return nil;
+    }
+
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter withIndexPath:path];
 
     CGRect frame = CGRectZero;
