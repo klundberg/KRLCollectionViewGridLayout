@@ -31,6 +31,7 @@
         _visibleSupplementaryViews = [NSMutableDictionary dictionary];
         _visibleSupplementaryViews[UICollectionElementKindSectionHeader] = [NSMutableDictionary dictionary];
         _visibleSupplementaryViews[UICollectionElementKindSectionFooter] = [NSMutableDictionary dictionary];
+        _sectionInsets = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -70,6 +71,15 @@
 {
     NSMutableDictionary *viewsForKind = self.visibleSupplementaryViews[elementKind];
     [viewsForKind removeObjectForKey:indexPath];
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    NSValue *value = self.sectionInsets[@(section)];
+    if (value == nil) {
+        return [(id)collectionViewLayout sectionInset];
+    }
+    return [value UIEdgeInsetsValue];
 }
 
 @end

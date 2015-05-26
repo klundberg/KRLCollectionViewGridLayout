@@ -100,24 +100,24 @@
 
 - (void)calculateContentSize
 {
-    CGSize cellSize = [self cellSize];
     CGFloat contentLength = 0;
 
     NSInteger sections = [self.collectionView numberOfSections];
     for (NSInteger section = 0; section < sections; section++) {
-        contentLength += [self contentLengthForSection:section withCellSize:cellSize];
+        contentLength += [self contentLengthForSection:section];
     }
 
     self.collectionViewContentLength = contentLength;
 }
 
-- (CGFloat)contentLengthForSection:(NSInteger)section withCellSize:(CGSize)cellSize
+- (CGFloat)contentLengthForSection:(NSInteger)section
 {
     NSInteger rowsInSection = [self rowsInSection:section];
 
     CGFloat contentLength = (rowsInSection - 1) * self.lineSpacing;
-    contentLength += [self lengthwiseInsetLength];
+    contentLength += [self lengthwiseInsetLengthInSection:section];
 
+    CGSize cellSize = [self cellSizeInSection:section];
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
         contentLength += rowsInSection * cellSize.height;
     } else {
@@ -143,12 +143,13 @@
     return rowsInSection;
 }
 
-- (CGFloat)lengthwiseInsetLength
+- (CGFloat)lengthwiseInsetLengthInSection:(NSInteger)section
 {
+    UIEdgeInsets sectionInset = [self sectionInsetForSection:section];
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
-        return self.sectionInset.top + self.sectionInset.bottom;
+        return sectionInset.top + sectionInset.bottom;
     } else {
-        return self.sectionInset.left + self.sectionInset.right;
+        return sectionInset.left + sectionInset.right;
     }
 }
 
@@ -201,21 +202,22 @@
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:path];
 
     CGRect frame = CGRectZero;
+    UIEdgeInsets sectionInset = [self sectionInsetForSection:path.section];
 
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
         frame.size.width = (self.collectionViewContentSize.width
-                            - self.sectionInset.left
-                            - self.sectionInset.right);
+                            - sectionInset.left
+                            - sectionInset.right);
         frame.size.height = self.headerReferenceLength;
-        frame.origin.x = self.sectionInset.left;
-        frame.origin.y = [self startOfSection:path.section] + self.sectionInset.top;
+        frame.origin.x = sectionInset.left;
+        frame.origin.y = [self startOfSection:path.section] + sectionInset.top;
     } else {
         frame.size.width = self.headerReferenceLength;
         frame.size.height = (self.collectionViewContentSize.height
-                             - self.sectionInset.top
-                             - self.sectionInset.bottom);
-        frame.origin.y = self.sectionInset.top;
-        frame.origin.x = [self startOfSection:path.section] + self.sectionInset.left;
+                             - sectionInset.top
+                             - sectionInset.bottom);
+        frame.origin.y = sectionInset.top;
+        frame.origin.x = [self startOfSection:path.section] + sectionInset.left;
     }
 
     attributes.frame = frame;
@@ -234,27 +236,28 @@
     CGRect frame = CGRectZero;
 
     CGFloat sectionStart = [self startOfSection:path.section];
-    CGFloat sectionLength = [self contentLengthForSection:path.section withCellSize:[self cellSize]];
+    CGFloat sectionLength = [self contentLengthForSection:path.section];
 
     CGFloat footerStart = sectionStart + sectionLength;
     if (self.footerReferenceLength > 0) {
         footerStart = footerStart - self.footerReferenceLength - self.lineSpacing;
     }
 
+    UIEdgeInsets sectionInset = [self sectionInsetForSection:path.section];
 
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
         frame.size.width = (self.collectionViewContentSize.width
-                            - self.sectionInset.left
-                            - self.sectionInset.right);
+                            - sectionInset.left
+                            - sectionInset.right);
         frame.size.height = self.footerReferenceLength;
-        frame.origin.x = self.sectionInset.left;
+        frame.origin.x = sectionInset.left;
         frame.origin.y = footerStart;
     } else {
         frame.size.width = self.footerReferenceLength;
         frame.size.height = (self.collectionViewContentSize.height
-                             - self.sectionInset.top
-                             - self.sectionInset.bottom);
-        frame.origin.y = self.sectionInset.top;
+                             - sectionInset.top
+                             - sectionInset.bottom);
+        frame.origin.y = sectionInset.top;
         frame.origin.x = footerStart;
     }
 
@@ -272,6 +275,15 @@
     return attributes;
 }
 
+- (UIEdgeInsets)sectionInsetForSection:(NSInteger)section
+{
+    if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)]) {
+        return [(id)self.collectionView.delegate collectionView:self.collectionView layout:self insetForSectionAtIndex:section];
+    } else {
+        return self.sectionInset;
+    }
+}
+
 - (UICollectionViewLayoutAttributes *)layoutAttributesForCellAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
@@ -283,7 +295,7 @@
 
 - (CGRect)frameForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGSize cellSize = [self cellSize];
+    CGSize cellSize = [self cellSizeInSection:indexPath.section];
     NSInteger rowOfItem = indexPath.item / self.numberOfItemsPerLine;
     NSInteger locationInRowOfItem = indexPath.item % self.numberOfItemsPerLine;
 
@@ -293,12 +305,15 @@
     if (self.headerReferenceLength > 0) {
         sectionStart += self.headerReferenceLength + self.lineSpacing;
     }
+
+    UIEdgeInsets sectionInset = [self sectionInsetForSection:indexPath.section];
+
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
-        frame.origin.x = self.sectionInset.left + (locationInRowOfItem * cellSize.width) + (self.interitemSpacing * locationInRowOfItem);
-        frame.origin.y = sectionStart + self.sectionInset.top + (rowOfItem * cellSize.height) + (self.lineSpacing * rowOfItem);
+        frame.origin.x = sectionInset.left + (locationInRowOfItem * cellSize.width) + (self.interitemSpacing * locationInRowOfItem);
+        frame.origin.y = sectionStart + sectionInset.top + (rowOfItem * cellSize.height) + (self.lineSpacing * rowOfItem);
     } else {
-        frame.origin.x = sectionStart + self.sectionInset.left + (rowOfItem * cellSize.width) + (self.lineSpacing * rowOfItem);
-        frame.origin.y = self.sectionInset.top + (locationInRowOfItem * cellSize.height) + (self.interitemSpacing * locationInRowOfItem);
+        frame.origin.x = sectionStart + sectionInset.left + (rowOfItem * cellSize.width) + (self.lineSpacing * rowOfItem);
+        frame.origin.y = sectionInset.top + (locationInRowOfItem * cellSize.height) + (self.interitemSpacing * locationInRowOfItem);
     }
     frame.size = cellSize;
 
@@ -308,16 +323,15 @@
 - (CGFloat)startOfSection:(NSInteger)section
 {
     CGFloat startOfSection = 0;
-    CGSize cellSize = [self cellSize];
-    for (NSInteger index = 0; index < section; index++) {
-        startOfSection += [self contentLengthForSection:index withCellSize:cellSize];
+    for (NSInteger currentSection = 0; currentSection < section; currentSection++) {
+        startOfSection += [self contentLengthForSection:currentSection];
     }
     return startOfSection;
 }
 
-- (CGSize)cellSize
+- (CGSize)cellSizeInSection:(NSInteger)section
 {
-    CGFloat usableSpace = [self usableSpace];
+    CGFloat usableSpace = [self usableSpaceInSection:section];
     CGFloat cellLength = usableSpace / self.numberOfItemsPerLine;
 
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
@@ -329,17 +343,18 @@
     }
 }
 
-- (CGFloat)usableSpace
+- (CGFloat)usableSpaceInSection:(NSInteger)section
 {
+    UIEdgeInsets sectionInset = [self sectionInsetForSection:section];
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
         return (self.collectionViewContentSize.width
-                - self.sectionInset.left
-                - self.sectionInset.right
+                - sectionInset.left
+                - sectionInset.right
                 - ((self.numberOfItemsPerLine - 1) * self.interitemSpacing));
     } else {
         return (self.collectionViewContentSize.height
-                - self.sectionInset.top
-                - self.sectionInset.bottom
+                - sectionInset.top
+                - sectionInset.bottom
                 - ((self.numberOfItemsPerLine - 1) * self.interitemSpacing));
     }
 }

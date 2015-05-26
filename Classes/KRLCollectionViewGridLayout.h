@@ -2,6 +2,19 @@
 
 @import UIKit;
 
+@protocol KRLCollectionViewDelegateGridLayout <NSObject>
+
+@optional
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout lengthForItemAtIndexPath:(NSIndexPath *)indexPath;
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout lineSpacingForSectionAtIndex:(NSInteger)section;
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout interitemSpacingForSectionAtIndex:(NSInteger)section;
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceLengthForHeaderInSection:(NSInteger)section;
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceLengthForFooterInSection:(NSInteger)section;
+
+@end
+
 /**
  A layout that positions and sizes cells based on the numberOfItemsPerLine and aspectRatio properties.
  */
@@ -31,7 +44,7 @@
 @property (nonatomic, assign) IBInspectable CGFloat lineSpacing;
 /**
  How many items the layout should place on a single line.
- Defaults to 1.
+ Defaults to 10.
  */
 @property (nonatomic, assign) IBInspectable NSInteger numberOfItemsPerLine;
 /**
