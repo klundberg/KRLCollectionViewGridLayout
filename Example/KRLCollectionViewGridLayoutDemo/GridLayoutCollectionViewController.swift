@@ -14,7 +14,7 @@ private let headerFooterIdentifier = "headerFooter"
 class GridLayoutCollectionViewController: UICollectionViewController, UIActionSheetDelegate {
 
     var layout: KRLCollectionViewGridLayout {
-        return self.collectionView?.collectionViewLayout as KRLCollectionViewGridLayout
+        return self.collectionView?.collectionViewLayout as! KRLCollectionViewGridLayout
     }
 
     override func viewDidLoad() {
@@ -33,7 +33,6 @@ class GridLayoutCollectionViewController: UICollectionViewController, UIActionSh
         return 2
     }
 
-
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 25
     }
@@ -48,7 +47,7 @@ class GridLayoutCollectionViewController: UICollectionViewController, UIActionSh
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
     
         // Configure the cell
         if indexPath.section % 2 == 1 {
@@ -62,7 +61,7 @@ class GridLayoutCollectionViewController: UICollectionViewController, UIActionSh
 
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
 
-        let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: headerFooterIdentifier, forIndexPath: indexPath) as HeaderFooterView
+        let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: headerFooterIdentifier, forIndexPath: indexPath) as! HeaderFooterView
 
         view.label.text = kind
         return view

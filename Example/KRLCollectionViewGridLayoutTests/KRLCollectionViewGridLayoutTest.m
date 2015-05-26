@@ -51,10 +51,8 @@
     assertThatDouble(layout.sectionInset.right, equalTo(@0));
     assertThatDouble(layout.interitemSpacing, equalTo(@10));
     assertThatDouble(layout.lineSpacing, equalTo(@10));
-    assertThatDouble(layout.headerReferenceSize.width, equalTo(@0));
-    assertThatDouble(layout.headerReferenceSize.height, equalTo(@0));
-    assertThatDouble(layout.footerReferenceSize.width, equalTo(@0));
-    assertThatDouble(layout.footerReferenceSize.height, equalTo(@0));
+    assertThatDouble(layout.headerReferenceLength, equalTo(@0));
+    assertThatDouble(layout.footerReferenceLength, equalTo(@0));
 }
 
 - (void)testLayoutContentViewSizeUsesControllerWidthIfVerticallyScrolling
@@ -96,8 +94,8 @@
     layout.aspectRatio = 1;
     layout.numberOfItemsPerLine = 1;
     layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
-    layout.headerReferenceSize = CGSizeMake(0, 50);
-    layout.footerReferenceSize = CGSizeMake(0, 25);
+    layout.headerReferenceLength = 50;
+    layout.footerReferenceLength = 25;
 
     controller.items = @[@[@1]];
 
@@ -192,8 +190,8 @@
     layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     layout.interitemSpacing = 10;
     layout.lineSpacing = 10;
-    layout.headerReferenceSize = CGSizeMake(0, 25);
-    layout.footerReferenceSize = CGSizeMake(0, 50);
+    layout.headerReferenceLength = 25;
+    layout.footerReferenceLength = 50;
 
     controller.items = @[@[@1],@[@2]];
 
@@ -293,8 +291,8 @@
     layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     layout.lineSpacing = 10;
     layout.interitemSpacing = 10;
-    layout.headerReferenceSize = CGSizeMake(0, 50);
-    layout.footerReferenceSize = CGSizeMake(0, 25);
+    layout.headerReferenceLength = 50;
+    layout.footerReferenceLength = 25;
 
     controller.items = @[@[@1]];
 
@@ -328,8 +326,8 @@
     layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     layout.lineSpacing = 10;
     layout.interitemSpacing = 10;
-    layout.headerReferenceSize = CGSizeMake(50, 0);
-    layout.footerReferenceSize = CGSizeMake(25, 0);
+    layout.headerReferenceLength = 50;
+    layout.footerReferenceLength = 25;
 
     controller.items = @[@[@1]];
     controller.view.frame = CGRectMake(0, 0, 700, 600);
@@ -445,8 +443,8 @@
     layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     layout.lineSpacing = 10;
     layout.interitemSpacing = 10;
-    layout.headerReferenceSize = CGSizeMake(0, 20);
-    layout.footerReferenceSize = CGSizeMake(0, 20);
+    layout.headerReferenceLength = 20;
+    layout.footerReferenceLength = 20;
 
     controller.items = @[@[@1],@[@2]];
 

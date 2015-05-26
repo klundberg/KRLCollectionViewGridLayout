@@ -1,12 +1,19 @@
-//
-//  KLGridLayout.h
-//  KLCollectionLayouts
-//
-//  Created by Kevin Lundberg on 6/14/14.
-//  Copyright (c) 2014 Kevin Lundberg. All rights reserved.
-//
+//  Copyright (c) 2014 Kevin Lundberg.
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+
+@protocol KRLCollectionViewDelegateGridLayout <NSObject>
+
+@optional
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout lineSpacingForSectionAtIndex:(NSInteger)section;
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout interitemSpacingForSectionAtIndex:(NSInteger)section;
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section;
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
+
+
+@end
 
 /**
  A layout that positions and sizes cells based on the numberOfItemsPerLine and aspectRatio properties.
@@ -46,16 +53,16 @@
  */
 @property (nonatomic, assign) IBInspectable CGFloat aspectRatio;
 /**
- The size of a header for all sections. Defaults to CGSizeZero.
- If scrollDirection is vertical, only the height dimension matters. If scrollDirection is horizontal, only the width dimension matters.
- If the relevant dimension is zero, no header is created.
+ The length of a header for all sections. Defaults to 0.
+ If scrollDirection is vertical, this length represents the height. If scrollDirection is horizontal, this length represents the width.
+ If the length is zero, no header is created.
  */
-@property (nonatomic, assign) IBInspectable CGSize headerReferenceSize;
+@property (nonatomic, assign) IBInspectable CGFloat headerReferenceLength;
 /**
- The size of a footer for all sections. Defaults to CGSizeZero.
- If scrollDirection is vertical, only the height dimension matters. If scrollDirection is horizontal, only the width dimension matters.
- If the relevant dimension is zero, no footer is created.
+ The length of a footer for all sections. Defaults to 0.
+ If scrollDirection is vertical, this length represents the height. If scrollDirection is horizontal, this length represents the width.
+ If the length is zero, no footer is created.
  */
-@property (nonatomic, assign) IBInspectable CGSize footerReferenceSize;
+@property (nonatomic, assign) IBInspectable CGFloat footerReferenceLength;
 
 @end

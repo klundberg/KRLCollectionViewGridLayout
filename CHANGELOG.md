@@ -1,5 +1,10 @@
 # KRLCollectionViewGridLayout CHANGELOG
 
+## 0.3.0
+
+* Changed headerReferenceSize/footerReferenceSize (CGSize) properties to headerReferenceLength/footerReferenceLength (CGFloat) properties.
+* Updated demo project to swift 1.2/Xcode 6.3.
+
 ## 0.2.0
 
 * Added support for headers and footers, via the headerReferenceSize and footerReferenceSize properties.

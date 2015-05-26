@@ -1,10 +1,4 @@
-//
-//  KLGridLayout.m
-//  KLCollectionLayouts
-//
-//  Created by Kevin Lundberg on 6/14/14.
-//  Copyright (c) 2014 Kevin Lundberg. All rights reserved.
-//
+//  Copyright (c) 2014 Kevin Lundberg.
 
 #import "KRLCollectionViewGridLayout.h"
 
@@ -48,8 +42,8 @@
     _interitemSpacing = 10;
     _lineSpacing = 10;
     _scrollDirection = UICollectionViewScrollDirectionVertical;
-    _headerReferenceSize = CGSizeZero;
-    _footerReferenceSize = CGSizeZero;
+    _headerReferenceLength = 0;
+    _footerReferenceLength = 0;
 }
 
 - (void)prepareLayout
@@ -130,8 +124,14 @@
         contentLength += rowsInSection * cellSize.width;
     }
 
-    contentLength += [self headerLength];
-    contentLength += [self footerLength];
+    contentLength += self.headerReferenceLength;
+    if (self.headerReferenceLength > 0) {
+        contentLength += self.lineSpacing;
+    }
+    contentLength += self.footerReferenceLength;
+    if (self.footerReferenceLength > 0) {
+        contentLength += self.lineSpacing;
+    }
 
     return contentLength;
 }
@@ -150,16 +150,6 @@
     } else {
         return self.sectionInset.left + self.sectionInset.right;
     }
-}
-
-- (CGFloat)headerLength
-{
-    return [self lengthForValue:self.headerReferenceSize];
-}
-
-- (CGFloat)footerLength
-{
-    return [self lengthForValue:self.footerReferenceSize];
 }
 
 - (CGFloat)lengthForValue:(CGSize)size
@@ -204,24 +194,23 @@
 
 - (UICollectionViewLayoutAttributes *)headerAttributesForIndexPath:(NSIndexPath *)path
 {
-    if (self.scrollDirection == UICollectionViewScrollDirectionVertical && self.headerReferenceSize.height == 0) {
-        return nil;
-    } else if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal && self.headerReferenceSize.width == 0) {
+    if (self.headerReferenceLength == 0) {
         return nil;
     }
 
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:path];
 
     CGRect frame = CGRectZero;
-    frame.size = self.headerReferenceSize;
 
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
         frame.size.width = (self.collectionViewContentSize.width
                             - self.sectionInset.left
                             - self.sectionInset.right);
+        frame.size.height = self.headerReferenceLength;
         frame.origin.x = self.sectionInset.left;
         frame.origin.y = [self startOfSection:path.section] + self.sectionInset.top;
     } else {
+        frame.size.width = self.headerReferenceLength;
         frame.size.height = (self.collectionViewContentSize.height
                              - self.sectionInset.top
                              - self.sectionInset.bottom);
@@ -236,29 +225,32 @@
 
 - (UICollectionViewLayoutAttributes *)footerAttributesForIndexPath:(NSIndexPath *)path
 {
-    if (self.scrollDirection == UICollectionViewScrollDirectionVertical && self.footerReferenceSize.height == 0) {
-        return nil;
-    } else if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal && self.footerReferenceSize.width == 0) {
+    if (self.footerReferenceLength == 0) {
         return nil;
     }
 
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter withIndexPath:path];
 
     CGRect frame = CGRectZero;
-    frame.size = self.footerReferenceSize;
 
     CGFloat sectionStart = [self startOfSection:path.section];
     CGFloat sectionLength = [self contentLengthForSection:path.section withCellSize:[self cellSize]];
 
-    CGFloat footerStart = sectionStart + sectionLength - [self footerLength];
+    CGFloat footerStart = sectionStart + sectionLength;
+    if (self.footerReferenceLength > 0) {
+        footerStart = footerStart - self.footerReferenceLength - self.lineSpacing;
+    }
+
 
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
         frame.size.width = (self.collectionViewContentSize.width
                             - self.sectionInset.left
                             - self.sectionInset.right);
+        frame.size.height = self.footerReferenceLength;
         frame.origin.x = self.sectionInset.left;
         frame.origin.y = footerStart;
     } else {
+        frame.size.width = self.footerReferenceLength;
         frame.size.height = (self.collectionViewContentSize.height
                              - self.sectionInset.top
                              - self.sectionInset.bottom);
@@ -297,7 +289,10 @@
 
     CGRect frame = CGRectZero;
 
-    CGFloat sectionStart = [self startOfSection:indexPath.section] + [self headerLength];
+    CGFloat sectionStart = [self startOfSection:indexPath.section];
+    if (self.headerReferenceLength > 0) {
+        sectionStart += self.headerReferenceLength + self.lineSpacing;
+    }
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
         frame.origin.x = self.sectionInset.left + (locationInRowOfItem * cellSize.width) + (self.interitemSpacing * locationInRowOfItem);
         frame.origin.y = sectionStart + self.sectionInset.top + (rowOfItem * cellSize.height) + (self.lineSpacing * rowOfItem);
