@@ -3,13 +3,10 @@
 #import "KRLCollectionViewGridLayout.h"
 
 @interface KRLCollectionViewGridLayout ()
-/**
- dictionary keyed by supplementary attribute kind (header and footer), with values as dictionaries keyed by indexpath containing the attributes.
- */
+/** dictionary keyed by supplementary attribute kind (header and footer), with values as dictionaries keyed by indexpath containing the attributes. */
 @property (nonatomic, strong) NSMutableDictionary *supplementaryAttributes;
-/**
- 2d array, outer array keyed by section, inner arrays keyed by row.
- */
+
+/** 2d array, outer array keyed by section, inner arrays keyed by row. */
 @property (nonatomic, strong) NSMutableArray *cellAttributesBySection;
 @property (nonatomic, assign, readwrite) CGFloat collectionViewContentLength;
 @end
@@ -125,13 +122,7 @@
     }
 
     contentLength += self.headerReferenceLength;
-    if (self.headerReferenceLength > 0) {
-        contentLength += self.lineSpacing;
-    }
     contentLength += self.footerReferenceLength;
-    if (self.footerReferenceLength > 0) {
-        contentLength += self.lineSpacing;
-    }
 
     return contentLength;
 }
@@ -150,22 +141,6 @@
         return sectionInset.top + sectionInset.bottom;
     } else {
         return sectionInset.left + sectionInset.right;
-    }
-}
-
-- (CGFloat)lengthForValue:(CGSize)size
-{
-    CGFloat length;
-    if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
-        length = size.height;
-    } else {
-        length = size.width;
-    }
-
-    if (length > 0) {
-        return length + self.lineSpacing;
-    } else {
-        return 0;
     }
 }
 
@@ -202,22 +177,17 @@
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:path];
 
     CGRect frame = CGRectZero;
-    UIEdgeInsets sectionInset = [self sectionInsetForSection:path.section];
 
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
-        frame.size.width = (self.collectionViewContentSize.width
-                            - sectionInset.left
-                            - sectionInset.right);
+        frame.size.width = self.collectionViewContentSize.width;
         frame.size.height = self.headerReferenceLength;
-        frame.origin.x = sectionInset.left;
-        frame.origin.y = [self startOfSection:path.section] + sectionInset.top;
+        frame.origin.x = 0;
+        frame.origin.y = [self startOfSection:path.section];
     } else {
         frame.size.width = self.headerReferenceLength;
-        frame.size.height = (self.collectionViewContentSize.height
-                             - sectionInset.top
-                             - sectionInset.bottom);
-        frame.origin.y = sectionInset.top;
-        frame.origin.x = [self startOfSection:path.section] + sectionInset.left;
+        frame.size.height = self.collectionViewContentSize.height;
+        frame.origin.x = [self startOfSection:path.section];
+        frame.origin.y = 0;
     }
 
     attributes.frame = frame;
@@ -240,25 +210,20 @@
 
     CGFloat footerStart = sectionStart + sectionLength;
     if (self.footerReferenceLength > 0) {
-        footerStart = footerStart - self.footerReferenceLength - self.lineSpacing;
+        footerStart = footerStart - self.footerReferenceLength;
     }
 
-    UIEdgeInsets sectionInset = [self sectionInsetForSection:path.section];
 
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
-        frame.size.width = (self.collectionViewContentSize.width
-                            - sectionInset.left
-                            - sectionInset.right);
+        frame.size.width = self.collectionViewContentSize.width;
         frame.size.height = self.footerReferenceLength;
-        frame.origin.x = sectionInset.left;
+        frame.origin.x = 0;
         frame.origin.y = footerStart;
     } else {
         frame.size.width = self.footerReferenceLength;
-        frame.size.height = (self.collectionViewContentSize.height
-                             - sectionInset.top
-                             - sectionInset.bottom);
-        frame.origin.y = sectionInset.top;
+        frame.size.height = self.collectionViewContentSize.height;
         frame.origin.x = footerStart;
+        frame.origin.y = 0;
     }
 
     attributes.frame = frame;
@@ -303,7 +268,7 @@
 
     CGFloat sectionStart = [self startOfSection:indexPath.section];
     if (self.headerReferenceLength > 0) {
-        sectionStart += self.headerReferenceLength + self.lineSpacing;
+        sectionStart += self.headerReferenceLength;
     }
 
     UIEdgeInsets sectionInset = [self sectionInsetForSection:indexPath.section];

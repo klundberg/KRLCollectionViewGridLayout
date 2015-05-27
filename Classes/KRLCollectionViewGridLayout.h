@@ -6,8 +6,35 @@
 
 @optional
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout lengthForItemAtIndexPath:(NSIndexPath *)indexPath;
+/**
+ Asks the delegate for the length of each cell.
+
+ @param collectionView       The collection view object displaying the grid layout.
+ @param collectionViewLayout The layout object requesting the information.
+ @param indexPath            The index path of the cell whose length information we want.
+ @param depth                How "deep" the cell is (depth is the width of the cell in vertical scrolling mode, and height in horizontal scrolling mode).
+
+ @return How long the cell should be (length is used as width in horizontal scrolling mode, and height in vertical scrolling mode).
+ 
+ @discussion if this method is not implemented, the cell's length is determined by the aspectRatio given to the layout and the number of columns the layout has.
+ */
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout lengthForItemAtIndexPath:(NSIndexPath *)indexPath withDepth:(CGFloat)depth;
+
+/**
+ Asks the delegate for the margins to apply to content in the specified section.
+
+ @param collectionView       The collection view object displaying the grid layout.
+ @param collectionViewLayout The layout object requesting the information.
+ @param section              The index number of the section whose insets are needed.
+
+ @return The margins to apply to items in the section.
+ 
+ @discussion The return value of this method is applied to it's desired section in the same way as UICollectionViewFlowLayout uses it (applies it to section items only, not headers and footers).
+ */
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout numberOfColumnsForSectionAtIndex:(NSInteger)section;
+
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout lineSpacingForSectionAtIndex:(NSInteger)section;
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout interitemSpacingForSectionAtIndex:(NSInteger)section;
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceLengthForHeaderInSection:(NSInteger)section;

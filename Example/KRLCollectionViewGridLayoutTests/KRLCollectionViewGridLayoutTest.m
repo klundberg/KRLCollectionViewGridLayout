@@ -103,9 +103,9 @@
 
     CGSize contentSize = layout.collectionViewContentSize;
 
-    // 480 + 50 + 25 + 10*2 (line spacing) + 10*2 (section inset) = 595
+    // 480 + 50 + 25 + 10*2 (section inset) = 575
 
-    assertThatDouble(contentSize.height, equalTo(@595));
+    assertThatDouble(contentSize.height, equalTo(@575));
     assertThatDouble(contentSize.width, equalTo(@500));
 }
 
@@ -198,7 +198,7 @@
     [controller.view layoutIfNeeded];
 
     CGSize contentSize = layout.collectionViewContentSize;
-    assertThatDouble(contentSize.height, equalTo(@1190)); // (10 + 25 + 10 + 480 + 10 + 50 + 10) * 2
+    assertThatDouble(contentSize.height, equalTo(@1150)); // (10 + 25 + 480 + 50 + 10) * 2
     assertThatDouble(contentSize.width, equalTo(@500));
 }
 
@@ -302,19 +302,19 @@
     UICollectionViewCell *cell1 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
     UICollectionReusableView *footer = controller.visibleSupplementaryViews[UICollectionElementKindSectionFooter][[NSIndexPath indexPathForItem:0 inSection:0]];
 
-    assertThatDouble(header.frame.origin.x, equalTo(@10));
-    assertThatDouble(header.frame.origin.y, equalTo(@10));
-    assertThatDouble(header.frame.size.width, equalTo(@480));
+    assertThatDouble(header.frame.origin.x, equalTo(@0));
+    assertThatDouble(header.frame.origin.y, equalTo(@0));
+    assertThatDouble(header.frame.size.width, equalTo(@500));
     assertThatDouble(header.frame.size.height, equalTo(@50));
 
     assertThatDouble(cell1.frame.origin.x, equalTo(@10));
-    assertThatDouble(cell1.frame.origin.y, equalTo(@70));
+    assertThatDouble(cell1.frame.origin.y, equalTo(@60));
     assertThatDouble(cell1.frame.size.width, equalTo(@480));
     assertThatDouble(cell1.frame.size.height, equalTo(@480));
 
-    assertThatDouble(footer.frame.origin.x, equalTo(@10));
-    assertThatDouble(footer.frame.origin.y, equalTo(@560));
-    assertThatDouble(footer.frame.size.width, equalTo(@480));
+    assertThatDouble(footer.frame.origin.x, equalTo(@0));
+    assertThatDouble(footer.frame.origin.y, equalTo(@550));
+    assertThatDouble(footer.frame.size.width, equalTo(@500));
     assertThatDouble(footer.frame.size.height, equalTo(@25));
 }
 
@@ -338,20 +338,20 @@
     UICollectionViewCell *cell1 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
     UICollectionReusableView *footer = controller.visibleSupplementaryViews[UICollectionElementKindSectionFooter][[NSIndexPath indexPathForItem:0 inSection:0]];
 
-    assertThatDouble(header.frame.origin.x, equalTo(@10));
-    assertThatDouble(header.frame.origin.y, equalTo(@10));
+    assertThatDouble(header.frame.origin.x, equalTo(@0));
+    assertThatDouble(header.frame.origin.y, equalTo(@0));
     assertThatDouble(header.frame.size.width, equalTo(@50));
-    assertThatDouble(header.frame.size.height, equalTo(@580));
+    assertThatDouble(header.frame.size.height, equalTo(@600));
 
-    assertThatDouble(cell1.frame.origin.x, equalTo(@70));
+    assertThatDouble(cell1.frame.origin.x, equalTo(@60));
     assertThatDouble(cell1.frame.origin.y, equalTo(@10));
     assertThatDouble(cell1.frame.size.width, equalTo(@580));
     assertThatDouble(cell1.frame.size.height, equalTo(@580));
 
-    assertThatDouble(footer.frame.origin.x, equalTo(@660));
-    assertThatDouble(footer.frame.origin.y, equalTo(@10));
+    assertThatDouble(footer.frame.origin.x, equalTo(@650));
+    assertThatDouble(footer.frame.origin.y, equalTo(@00));
     assertThatDouble(footer.frame.size.width, equalTo(@25));
-    assertThatDouble(footer.frame.size.height, equalTo(@580));
+    assertThatDouble(footer.frame.size.height, equalTo(@600));
 }
 
 - (void)testAspectRatioAffectsFramesProperlyInVerticalMode
@@ -458,34 +458,34 @@
     UICollectionViewCell *cell2 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:1]];
     UICollectionReusableView *footer2 = controller.visibleSupplementaryViews[UICollectionElementKindSectionFooter][[NSIndexPath indexPathForItem:0 inSection:1]];
 
-    assertThatDouble(header1.frame.origin.x, equalTo(@10));
-    assertThatDouble(header1.frame.origin.y, equalTo(@10));
-    assertThatDouble(header1.frame.size.width, equalTo(@480));
+    assertThatDouble(header1.frame.origin.x, equalTo(@0));
+    assertThatDouble(header1.frame.origin.y, equalTo(@0));
+    assertThatDouble(header1.frame.size.width, equalTo(@500));
     assertThatDouble(header1.frame.size.height, equalTo(@20));
 
     assertThatDouble(cell1.frame.origin.x, equalTo(@10));
-    assertThatDouble(cell1.frame.origin.y, equalTo(@40));
+    assertThatDouble(cell1.frame.origin.y, equalTo(@30));
     assertThatDouble(cell1.frame.size.width, equalTo(@88)); // (500 - 10*2 - 10*4)/5
     assertThatDouble(cell1.frame.size.height, equalTo(@88));
 
-    assertThatDouble(footer1.frame.origin.x, equalTo(@10));
-    assertThatDouble(footer1.frame.origin.y, equalTo(@138));
-    assertThatDouble(footer1.frame.size.width, equalTo(@480));
+    assertThatDouble(footer1.frame.origin.x, equalTo(@0));
+    assertThatDouble(footer1.frame.origin.y, equalTo(@128));
+    assertThatDouble(footer1.frame.size.width, equalTo(@500));
     assertThatDouble(footer1.frame.size.height, equalTo(@20));
 
-    assertThatDouble(header2.frame.origin.x, equalTo(@10));
-    assertThatDouble(header2.frame.origin.y, equalTo(@178));
-    assertThatDouble(header2.frame.size.width, equalTo(@480));
+    assertThatDouble(header2.frame.origin.x, equalTo(@0));
+    assertThatDouble(header2.frame.origin.y, equalTo(@148));
+    assertThatDouble(header2.frame.size.width, equalTo(@500));
     assertThatDouble(header2.frame.size.height, equalTo(@20));
 
     assertThatDouble(cell2.frame.origin.x, equalTo(@10));
-    assertThatDouble(cell2.frame.origin.y, equalTo(@208));
+    assertThatDouble(cell2.frame.origin.y, equalTo(@178));
     assertThatDouble(cell1.frame.size.width, equalTo(@88)); // (500 - 10*2 - 10*4)/5
     assertThatDouble(cell1.frame.size.height, equalTo(@88));
 
-    assertThatDouble(footer2.frame.origin.x, equalTo(@10));
-    assertThatDouble(footer2.frame.origin.y, equalTo(@306));
-    assertThatDouble(footer2.frame.size.width, equalTo(@480));
+    assertThatDouble(footer2.frame.origin.x, equalTo(@0));
+    assertThatDouble(footer2.frame.origin.y, equalTo(@276));
+    assertThatDouble(footer2.frame.size.width, equalTo(@500));
     assertThatDouble(footer2.frame.size.height, equalTo(@20));
 }
 

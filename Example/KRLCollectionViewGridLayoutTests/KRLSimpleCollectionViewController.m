@@ -1,17 +1,9 @@
-//
-//  KRLSimpleCollectionViewController.m
-//  KLCollectionLayouts
-//
-//  Created by Kevin Lundberg on 3/9/14.
-//  Copyright (c) 2014 Kevin Lundberg. All rights reserved.
-//
+//  Copyright (c) 2014 Kevin Lundberg.
 
 #import "KRLSimpleCollectionViewController.h"
 
 @interface KRLSimpleCollectionViewController ()
-
 @property (nonatomic, copy, readwrite) NSMutableDictionary *visibleSupplementaryViews;
-
 @end
 
 @implementation KRLSimpleCollectionViewController
