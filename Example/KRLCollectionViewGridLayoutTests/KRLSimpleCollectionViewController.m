@@ -24,6 +24,8 @@
         _visibleSupplementaryViews[UICollectionElementKindSectionHeader] = [NSMutableDictionary dictionary];
         _visibleSupplementaryViews[UICollectionElementKindSectionFooter] = [NSMutableDictionary dictionary];
         _sectionInsets = [NSMutableDictionary dictionary];
+        _lineSpacings = [NSMutableDictionary dictionary];
+        _interitemSpacings = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -72,6 +74,24 @@
         return [(id)collectionViewLayout sectionInset];
     }
     return [value UIEdgeInsetsValue];
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout lineSpacingForSectionAtIndex:(NSInteger)section
+{
+    NSNumber *value = self.lineSpacings[@(section)];
+    if (value == nil) {
+        return [(id)collectionViewLayout lineSpacing];
+    }
+    return [value doubleValue];
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout interitemSpacingForSectionAtIndex:(NSInteger)section
+{
+    NSNumber *value = self.interitemSpacings[@(section)];
+    if (value == nil) {
+        return [(id)collectionViewLayout interitemSpacing];
+    }
+    return [value doubleValue];
 }
 
 @end

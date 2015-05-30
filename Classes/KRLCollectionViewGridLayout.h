@@ -5,21 +5,6 @@
 @protocol KRLCollectionViewDelegateGridLayout <NSObject>
 
 @optional
-
-/**
- Asks the delegate for the length of each cell.
-
- @param collectionView       The collection view object displaying the grid layout.
- @param collectionViewLayout The layout object requesting the information.
- @param indexPath            The index path of the cell whose length information we want.
- @param depth                How "deep" the cell is (depth is the width of the cell in vertical scrolling mode, and height in horizontal scrolling mode).
-
- @return How long the cell should be (length is used as width in horizontal scrolling mode, and height in vertical scrolling mode).
- 
- @discussion if this method is not implemented, the cell's length is determined by the aspectRatio given to the layout and the number of columns the layout has.
- */
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout lengthForItemAtIndexPath:(NSIndexPath *)indexPath withDepth:(CGFloat)depth;
-
 /**
  Asks the delegate for the margins to apply to content in the specified section.
 
@@ -33,12 +18,42 @@
  */
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout numberOfColumnsForSectionAtIndex:(NSInteger)section;
+/**
+ Asks the delegate for the amount of spacing between lines that the given section should have.
 
+ @param collectionView       The collection view object displaying the grid layout.
+ @param collectionViewLayout The layout object requesting the information.
+ @param section              The index number of the section whose line spacing is needed.
+
+ @return The line spacing the layout should use between lines of cells in the section at the given index.
+ */
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout lineSpacingForSectionAtIndex:(NSInteger)section;
+
+/**
+ Asks the delegate for the amount of spacing between cells on the sanme line that the given section should have.
+
+ @param collectionView       The collection view object displaying the grid layout.
+ @param collectionViewLayout The layout object requesting the information.
+ @param section              The index number of the section whose inter-item spacing is needed.
+
+ @return The inter-item spacing the layout should use between cells on the same line in the section at the given index
+ */
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout interitemSpacingForSectionAtIndex:(NSInteger)section;
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceLengthForHeaderInSection:(NSInteger)section;
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceLengthForFooterInSection:(NSInteger)section;
+
+/**
+ Asks the delegate for the number of columns the given section should have.
+
+ @param collectionView       The collection view object displaying the grid layout.
+ @param collectionViewLayout The layout object requesting the information.
+ @param section              The index number of the section whose column count is needed
+
+ @return The number of columns the layout should use for the section at the given index.
+ */
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout numberOfColumnsForSectionAtIndex:(NSInteger)section;
 
 @end
 

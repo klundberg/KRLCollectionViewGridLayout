@@ -17,6 +17,8 @@
 #define MOCKITO_SHORTHAND 1
 #import <OCMockito/OCMockito.h>
 
+#define RECTVALUE(rect) [NSValue valueWithCGRect:rect]
+
 @interface KRLCollectionViewGridLayoutTest : XCTestCase
 {
     KRLCollectionViewGridLayout *layout;
@@ -538,10 +540,10 @@
 
     controller.sectionInsets[@0] = [NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(1, 2, 3, 4)];
 
-    controller.items = @[@[@1],@[@2]];
+    controller.items = @[@[@1],
+                         @[@2]];
 
     [controller.view layoutIfNeeded];
-
 
     UICollectionViewCell *cell1 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
     UICollectionViewCell *cell2 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:1]];
@@ -555,6 +557,60 @@
     assertThatDouble(cell2.frame.origin.y, equalTo(@498));
     assertThatDouble(cell2.frame.size.width, equalTo(@500));
     assertThatDouble(cell2.frame.size.height, equalTo(@500));
+}
+
+- (void)testIndividualSectionCanHaveVariableLineSpacing
+{
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+
+    controller.lineSpacings[@0] = @5;
+    controller.lineSpacings[@1] = @20;
+
+    controller.items = @[@[@1,@2],
+                         @[@3,@4]];
+
+    CGRect frame = controller.view.frame;
+    frame.size.height = 2000; // make tall enough for all cells to exist
+    controller.view.frame = frame;
+
+    [controller.view layoutIfNeeded];
+
+
+    UICollectionViewCell *cell1 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    UICollectionViewCell *cell2 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]];
+    UICollectionViewCell *cell3 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:1]];
+    UICollectionViewCell *cell4 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:1]];
+
+    assertThat(RECTVALUE(cell1.frame), equalTo(RECTVALUE(CGRectMake(0, 0, 500, 500))));
+    assertThat(RECTVALUE(cell2.frame), equalTo(RECTVALUE(CGRectMake(0, 505, 500, 500))));
+
+    assertThat(RECTVALUE(cell3.frame), equalTo(RECTVALUE(CGRectMake(0, 1005, 500, 500))));
+    assertThat(RECTVALUE(cell4.frame), equalTo(RECTVALUE(CGRectMake(0, 1525, 500, 500))));
+}
+
+- (void)testIndividualSectionCanHaveVariableInteritemSpacing
+{
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.numberOfItemsPerLine = 2;
+
+    controller.interitemSpacings[@0] = @0;
+    controller.interitemSpacings[@1] = @20;
+
+    controller.items = @[@[@1,@2],
+                         @[@3,@4]];
+
+    [controller.view layoutIfNeeded];
+
+    UICollectionViewCell *cell1 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    UICollectionViewCell *cell2 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]];
+    UICollectionViewCell *cell3 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:1]];
+    UICollectionViewCell *cell4 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:1]];
+
+    assertThat(RECTVALUE(cell1.frame), equalTo(RECTVALUE(CGRectMake(0, 0, 250, 250))));
+    assertThat(RECTVALUE(cell2.frame), equalTo(RECTVALUE(CGRectMake(250, 0, 250, 250))));
+
+    assertThat(RECTVALUE(cell3.frame), equalTo(RECTVALUE(CGRectMake(0, 250, 240, 240))));
+    assertThat(RECTVALUE(cell4.frame), equalTo(RECTVALUE(CGRectMake(260, 250, 240, 240))));
 }
 
 @end
