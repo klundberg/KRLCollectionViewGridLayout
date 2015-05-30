@@ -1,7 +1,6 @@
 language: objective-c
 xcode_workspace: Example/KRLCollectionViewGridLayoutDemo.xcworkspace
 xcode_scheme: KRLCollectionViewGridLayoutDemo
-osx_image: xcode611
 xcode_sdk: iphonesimulator
 
 before_install:
