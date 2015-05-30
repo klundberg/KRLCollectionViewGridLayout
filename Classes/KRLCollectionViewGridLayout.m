@@ -297,14 +297,14 @@
 - (CGSize)cellSizeInSection:(NSInteger)section
 {
     CGFloat usableSpace = [self usableSpaceInSection:section];
-    CGFloat cellLength = usableSpace / self.numberOfItemsPerLine;
+    CGFloat cellDepth = usableSpace / self.numberOfItemsPerLine;
 
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
-        return CGSizeMake(cellLength,
-                          cellLength * (1.0 / self.aspectRatio));
+        return CGSizeMake(cellDepth,
+                          cellDepth * (1.0 / self.aspectRatio));
     } else {
-        return CGSizeMake(cellLength * self.aspectRatio,
-                          cellLength);
+        return CGSizeMake(cellDepth * self.aspectRatio,
+                          cellDepth);
     }
 }
 

@@ -75,3 +75,32 @@
 }
 
 @end
+
+@interface KRLCustomCellSizeCollectionViewController ()
+@property (nonatomic, strong, readwrite) NSMutableDictionary *cellLengths;
+@end
+@implementation KRLCustomCellSizeCollectionViewController
+
+- (id)initWithCollectionViewLayout:(UICollectionViewLayout *)layout
+{
+    self = [super initWithCollectionViewLayout:layout];
+    if (self) {
+        _cellLengths = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout lengthForItemAtIndexPath:(NSIndexPath *)indexPath withDepth:(CGFloat)depth
+{
+    NSNumber *length = self.cellLengths[indexPath];
+
+    if (length == nil) {
+        KRLCollectionViewGridLayout *layout = (id)collectionViewLayout;
+        CGFloat ratio = (layout.scrollDirection == UICollectionViewScrollDirectionVertical ? 1.0 / layout.aspectRatio : layout.aspectRatio);
+        return depth * ratio;
+    }
+
+    return length.doubleValue;
+}
+
+@end

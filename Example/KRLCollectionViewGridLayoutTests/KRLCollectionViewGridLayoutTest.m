@@ -21,6 +21,9 @@
 {
     KRLCollectionViewGridLayout *layout;
     KRLSimpleCollectionViewController *controller;
+
+    KRLCollectionViewGridLayout *variableCellLayout;
+    KRLCustomCellSizeCollectionViewController *variableCellSizeController;
 }
 @end
 
@@ -29,15 +32,14 @@
 - (void)setUp
 {
     [super setUp];
-    layout = [[KRLCollectionViewGridLayout alloc] init];
+    layout = [KRLCollectionViewGridLayout new];
 
     controller = [[KRLSimpleCollectionViewController alloc] initWithCollectionViewLayout:layout];
     controller.view.frame = CGRectMake(0, 0, 500, 600);
-}
 
-- (void)tearDown
-{
-    [super tearDown];
+    variableCellLayout = [KRLCollectionViewGridLayout new];
+    variableCellSizeController = [[KRLCustomCellSizeCollectionViewController alloc] initWithCollectionViewLayout:variableCellLayout];
+    variableCellSizeController.view.frame = CGRectMake(0, 0, 500, 600);
 }
 
 - (void)testLayoutDefaultValues
@@ -555,6 +557,34 @@
     assertThatDouble(cell2.frame.origin.y, equalTo(@498));
     assertThatDouble(cell2.frame.size.width, equalTo(@500));
     assertThatDouble(cell2.frame.size.height, equalTo(@500));
+}
+
+- (void)testVariableCellHeightFromDelegateProperlyAffectsCellFrames
+{
+    variableCellLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+
+    NSIndexPath *path0_0 = [NSIndexPath indexPathForItem:0 inSection:0];
+    NSIndexPath *path0_1 = [NSIndexPath indexPathForItem:1 inSection:0];
+
+    variableCellSizeController.cellLengths[path0_0] = @100;
+    variableCellSizeController.cellLengths[path0_1] = @200;
+
+    variableCellSizeController.items = @[@[@1,@2]];
+
+    [variableCellSizeController.view layoutIfNeeded];
+
+    UICollectionViewCell *cell1 = [variableCellSizeController.collectionView cellForItemAtIndexPath:path0_0];
+    UICollectionViewCell *cell2 = [variableCellSizeController.collectionView cellForItemAtIndexPath:path0_1];
+
+    assertThatDouble(cell1.frame.origin.x, equalTo(@0));
+    assertThatDouble(cell1.frame.origin.y, equalTo(@0));
+    assertThatDouble(cell1.frame.size.width, equalTo(@500));
+    assertThatDouble(cell1.frame.size.height, equalTo(@100));
+
+    assertThatDouble(cell2.frame.origin.x, equalTo(@0));
+    assertThatDouble(cell2.frame.origin.y, equalTo(@110));
+    assertThatDouble(cell2.frame.size.width, equalTo(@500));
+    assertThatDouble(cell2.frame.size.height, equalTo(@200));
 }
 
 @end
