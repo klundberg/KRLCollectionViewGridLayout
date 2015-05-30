@@ -7,8 +7,6 @@ xcode_sdk: iphonesimulator
 
 before_install:
   - gem update cocoapods -N
-  - brew update
-  - brew upgrade xctool
 install:
   - cd Example
   - pod install
