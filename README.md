@@ -27,7 +27,7 @@ You can also add headers and footers to each section similar to UICollectionView
 In vertical scrolling mode, length is the height of the header/footer. In horizontal scrolling mode, length is the width of the header/footer.
 A length of 0 in these dimensions will not try to create a view.
 
-All of the above properties (except for `scrollDirection`) can be configured on a per-section basis using `KRLCollectionViewDelegateFlowLayout`. Have your view controller or other object that implements the regular UICollectionViewDelegate also implement this protocol to make these per-section variances on these properties.
+All of the above properties (except for `scrollDirection`) can be configured on a per-section basis using `KRLCollectionViewDelegateGridLayout`. Have your view controller or other object that implements the regular UICollectionViewDelegate also implement this protocol to make these per-section variances for these properties happen.
 
 ## Usage
 
