@@ -26,6 +26,8 @@
         _sectionInsets = [NSMutableDictionary dictionary];
         _lineSpacings = [NSMutableDictionary dictionary];
         _interitemSpacings = [NSMutableDictionary dictionary];
+        _headerLengths = [NSMutableDictionary dictionary];
+        _footerLengths = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -90,6 +92,24 @@
     NSNumber *value = self.interitemSpacings[@(section)];
     if (value == nil) {
         return [(id)collectionViewLayout interitemSpacing];
+    }
+    return [value doubleValue];
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceLengthForHeaderInSection:(NSInteger)section
+{
+    NSNumber *value = self.headerLengths[@(section)];
+    if (value == nil) {
+        return [(id)collectionViewLayout headerReferenceLength];
+    }
+    return [value doubleValue];
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceLengthForFooterInSection:(NSInteger)section
+{
+    NSNumber *value = self.footerLengths[@(section)];
+    if (value == nil) {
+        return [(id)collectionViewLayout footerReferenceLength];
     }
     return [value doubleValue];
 }

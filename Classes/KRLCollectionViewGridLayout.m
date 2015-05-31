@@ -121,8 +121,9 @@
         contentLength += rowsInSection * cellSize.width;
     }
 
-    contentLength += self.headerReferenceLength;
-    contentLength += self.footerReferenceLength;
+
+    contentLength += [self headerLengthForSection:section];
+    contentLength += [self footerLengthForSection:section];
 
     return contentLength;
 }
@@ -170,7 +171,8 @@
 
 - (UICollectionViewLayoutAttributes *)headerAttributesForIndexPath:(NSIndexPath *)path
 {
-    if (self.headerReferenceLength == 0) {
+    CGFloat headerReferenceLength = [self headerLengthForSection:path.section];
+    if (headerReferenceLength == 0) {
         return nil;
     }
 
@@ -180,11 +182,11 @@
 
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
         frame.size.width = self.collectionViewContentSize.width;
-        frame.size.height = self.headerReferenceLength;
+        frame.size.height = headerReferenceLength;
         frame.origin.x = 0;
         frame.origin.y = [self startOfSection:path.section];
     } else {
-        frame.size.width = self.headerReferenceLength;
+        frame.size.width = headerReferenceLength;
         frame.size.height = self.collectionViewContentSize.height;
         frame.origin.x = [self startOfSection:path.section];
         frame.origin.y = 0;
@@ -197,7 +199,8 @@
 
 - (UICollectionViewLayoutAttributes *)footerAttributesForIndexPath:(NSIndexPath *)path
 {
-    if (self.footerReferenceLength == 0) {
+    CGFloat footerReferenceLength = [self footerLengthForSection:path.section];
+    if (footerReferenceLength == 0) {
         return nil;
     }
 
@@ -209,18 +212,18 @@
     CGFloat sectionLength = [self contentLengthForSection:path.section];
 
     CGFloat footerStart = sectionStart + sectionLength;
-    if (self.footerReferenceLength > 0) {
-        footerStart = footerStart - self.footerReferenceLength;
+    if (footerReferenceLength > 0) {
+        footerStart = footerStart - footerReferenceLength;
     }
 
 
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
         frame.size.width = self.collectionViewContentSize.width;
-        frame.size.height = self.footerReferenceLength;
+        frame.size.height = footerReferenceLength;
         frame.origin.x = 0;
         frame.origin.y = footerStart;
     } else {
-        frame.size.width = self.footerReferenceLength;
+        frame.size.width = footerReferenceLength;
         frame.size.height = self.collectionViewContentSize.height;
         frame.origin.x = footerStart;
         frame.origin.y = 0;
@@ -267,6 +270,24 @@
     }
 }
 
+- (CGFloat)headerLengthForSection:(NSInteger)section
+{
+    if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:referenceLengthForHeaderInSection:)]) {
+        return [(id)self.collectionView.delegate collectionView:self.collectionView layout:self referenceLengthForHeaderInSection:section];
+    } else {
+        return self.headerReferenceLength;
+    }
+}
+
+- (CGFloat)footerLengthForSection:(NSInteger)section
+{
+    if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:referenceLengthForFooterInSection:)]) {
+        return [(id)self.collectionView.delegate collectionView:self.collectionView layout:self referenceLengthForFooterInSection:section];
+    } else {
+        return self.footerReferenceLength;
+    }
+}
+
 - (UICollectionViewLayoutAttributes *)layoutAttributesForCellAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
@@ -285,8 +306,9 @@
     CGRect frame = CGRectZero;
 
     CGFloat sectionStart = [self startOfSection:indexPath.section];
-    if (self.headerReferenceLength > 0) {
-        sectionStart += self.headerReferenceLength;
+    CGFloat headerReferenceLength = [self headerLengthForSection:indexPath.section];
+    if (headerReferenceLength > 0) {
+        sectionStart += headerReferenceLength;
     }
 
     UIEdgeInsets sectionInset = [self sectionInsetForSection:indexPath.section];

@@ -2,6 +2,8 @@
 
 @import UIKit;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol KRLCollectionViewDelegateGridLayout <NSObject>
 
 @optional
@@ -40,9 +42,6 @@
  */
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout interitemSpacingForSectionAtIndex:(NSInteger)section;
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceLengthForHeaderInSection:(NSInteger)section;
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceLengthForFooterInSection:(NSInteger)section;
-
 /**
  Asks the delegate for the number of columns the given section should have.
 
@@ -54,6 +53,28 @@
  */
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout numberOfColumnsForSectionAtIndex:(NSInteger)section;
+
+/**
+ Asks the delegate for the length of the header in the given section.
+
+ @param collectionView       The collection view object displaying the grid layout.
+ @param collectionViewLayout The layout object requesting the information.
+ @param section              The index number of the section whose header length is needed.
+
+ @return The length of the header for the section at the given index. A length of 0 prevents the header from being created.
+ */
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceLengthForHeaderInSection:(NSInteger)section;
+
+/**
+ Asks the delegate for the length of the footer in the given section.
+
+ @param collectionView       The collection view object displaying the grid layout.
+ @param collectionViewLayout The layout object requesting the information.
+ @param section              The index number of the section whose footer length is needed.
+
+ @return The length of the footer for the section at the given index. A length of 0 prevents the header from being created.
+ */
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceLengthForFooterInSection:(NSInteger)section;
 
 @end
 
@@ -108,3 +129,5 @@
 @property (nonatomic, assign) IBInspectable CGFloat footerReferenceLength;
 
 @end
+
+NS_ASSUME_NONNULL_END

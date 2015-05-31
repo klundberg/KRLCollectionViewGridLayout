@@ -27,6 +27,18 @@ class GridLayoutCollectionViewController: UICollectionViewController, UIActionSh
         collectionView?.registerNib(nib, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: headerFooterIdentifier)
     }
 
+    @IBAction func changeColumnsTapped(sender: AnyObject?) {
+        let alert = UIAlertController(title: "Choose how many columns", message: nil, preferredStyle: .ActionSheet)
+
+        for num in 1...6 {
+            alert.addAction(UIAlertAction(title: num.description, style: .Default, handler: { action in
+                self.layout.numberOfItemsPerLine = num
+            }))
+        }
+
+        presentViewController(alert, animated: true, completion: nil)
+    }
+
     // MARK: - UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -35,14 +47,6 @@ class GridLayoutCollectionViewController: UICollectionViewController, UIActionSh
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 25
-    }
-
-    @IBAction func changeColumnsTapped(sender: AnyObject?) {
-        UIActionSheet(title: "Choose how many columns", delegate: self, cancelButtonTitle: nil, destructiveButtonTitle: nil, otherButtonTitles: "1","2","3","4","5","6").showInView(self.view)
-    }
-
-    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        self.layout.numberOfItemsPerLine = actionSheet.buttonTitleAtIndex(buttonIndex).toInt()!
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -67,4 +71,32 @@ class GridLayoutCollectionViewController: UICollectionViewController, UIActionSh
         return view
     }
 
+}
+
+extension GridLayoutCollectionViewController: KRLCollectionViewDelegateGridLayout {
+
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        let inset = CGFloat((section + 1) * 10)
+        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+    }
+
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, interitemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return CGFloat((section + 1) * 10)
+    }
+
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, lineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return CGFloat((section + 1) * 10)
+    }
+
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceLengthForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat((section + 1) * 20)
+    }
+
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceLengthForFooterInSection section: Int) -> CGFloat {
+        return CGFloat((section + 1) * 20)
+    }
+
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, numberOfColumnsForSectionAtIndex section: Int) -> Int {
+//        return self.layout.numberOfItemsPerLine + (section * 1)
+//    }
 }

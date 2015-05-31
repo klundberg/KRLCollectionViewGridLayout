@@ -534,7 +534,7 @@
     assertThat(controller.visibleSupplementaryViews[UICollectionElementKindSectionFooter], isEmpty());
 }
 
-- (void)testIndividualSectionHasSpecificInsets
+- (void)testIndividualSectionCanHaveSpecificInsets
 {
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
 
@@ -611,6 +611,59 @@
 
     assertThat(RECTVALUE(cell3.frame), equalTo(RECTVALUE(CGRectMake(0, 250, 240, 240))));
     assertThat(RECTVALUE(cell4.frame), equalTo(RECTVALUE(CGRectMake(260, 250, 240, 240))));
+}
+
+- (void)testIndividualSectionCanHaveVariableHeaderSize
+{
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.interitemSpacing = 0;
+    layout.numberOfItemsPerLine = 4; // cells are 125x125
+
+    controller.headerLengths[@0] = @50;
+    controller.headerLengths[@1] = @20;
+    controller.headerLengths[@2] = @0;
+
+    controller.items = @[@[@1],
+                         @[@2],
+                         @[@3]];
+    [controller.view layoutIfNeeded];
+
+    // infer the header heights from the cells since we can't get the visible headers normally.
+    UICollectionViewCell *cell1 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    UICollectionViewCell *cell2 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:1]];
+    UICollectionViewCell *cell3 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:2]];
+
+    assertThat(RECTVALUE(cell1.frame), equalTo(RECTVALUE(CGRectMake(0, 50, 125, 125))));
+    assertThat(RECTVALUE(cell2.frame), equalTo(RECTVALUE(CGRectMake(0, 195, 125, 125))));
+    assertThat(RECTVALUE(cell3.frame), equalTo(RECTVALUE(CGRectMake(0, 320, 125, 125))));
+}
+
+- (void)testIndividualSectionCanHaveVariableFooterSize
+{
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.interitemSpacing = 0;
+    layout.numberOfItemsPerLine = 5; // cells are 100x100
+
+    controller.footerLengths[@0] = @50;
+    controller.footerLengths[@1] = @0;
+    controller.footerLengths[@2] = @20;
+
+    controller.items = @[@[@1],
+                         @[@2],
+                         @[@3],
+                         @[@4]];
+    [controller.view layoutIfNeeded];
+
+    // infer the header heights from the cells since we can't get the visible headers normally.
+    UICollectionViewCell *cell1 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    UICollectionViewCell *cell2 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:1]];
+    UICollectionViewCell *cell3 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:2]];
+    UICollectionViewCell *cell4 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:3]];
+
+    assertThat(RECTVALUE(cell1.frame), equalTo(RECTVALUE(CGRectMake(0, 0, 100, 100))));
+    assertThat(RECTVALUE(cell2.frame), equalTo(RECTVALUE(CGRectMake(0, 150, 100, 100))));
+    assertThat(RECTVALUE(cell3.frame), equalTo(RECTVALUE(CGRectMake(0, 250, 100, 100))));
+    assertThat(RECTVALUE(cell4.frame), equalTo(RECTVALUE(CGRectMake(0, 370, 100, 100))));
 }
 
 @end

@@ -15,5 +15,7 @@
 @property (nonatomic, copy, readonly) NSMutableDictionary *sectionInsets;
 @property (nonatomic, copy, readonly) NSMutableDictionary *lineSpacings;
 @property (nonatomic, copy, readonly) NSMutableDictionary *interitemSpacings;
+@property (nonatomic, copy, readonly) NSMutableDictionary *headerLengths;
+@property (nonatomic, copy, readonly) NSMutableDictionary *footerLengths;
 
 @end
