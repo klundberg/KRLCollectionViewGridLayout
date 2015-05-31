@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "KRLCollectionViewGridLayout"
-  s.version          = "0.3.1"
+  s.version          = "0.4.0"
   s.summary          = "A UICollectionViewLayout that specifies item size and location by number of columns."
   s.description      = <<-DESC
                        This layout is an alternative to UICollectionViewFlowLayout that positions and sizes items using a defined number of columns and an aspect ratio property which force the size of cells, rather than the cells' size telling the layout how to lay them out. By default, this will always show the same number of items in a row no matter how large or small the collection view is.

@@ -253,9 +253,9 @@
 		794C056F18E5217600A94FC3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = KL;
+				CLASSPREFIX = KRL;
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = Lundbergsoft;
+				ORGANIZATIONNAME = "Kevin Lundberg";
 				TargetAttributes = {
 					791EEB461957DA9E009DC47A = {
 						TestTargetID = 794C057618E5217600A94FC3;

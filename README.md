@@ -26,8 +26,8 @@ You can also add headers and footers to each section similar to UICollectionView
 
 In vertical scrolling mode, length is the height of the header/footer. In horizontal scrolling mode, length is the width of the header/footer.
 A length of 0 in these dimensions will not try to create a view.
-    
-As of 0.3.x, this layout supports multiple sections and header/footer views. However there is no functionality yet for per-section metrics.
+
+All of the above properties (except for `scrollDirection`) can be configured on a per-section basis using `KRLCollectionViewDelegateFlowLayout`. Have your view controller or other object that implements the regular UICollectionViewDelegate also implement this protocol to make these per-section variances on these properties.
 
 ## Usage
 
@@ -38,7 +38,7 @@ You can either run unit tests on the library itself, or run the sample project f
 
 iOS 6.0 or greater, and ARC.
 
-Example project requires Xcode 6.3, can only run in iOS 7.0+. 
+Example project requires Xcode 6.3, can only run in iOS 8.0+. 
 
 ## Installation
 
@@ -49,7 +49,7 @@ it, simply add the following line to your Podfile:
 
 ## Author
 
-Kevin Lundberg, kevinrlundberg at gmail dot com
+Kevin Lundberg, kevin at klundberg dot com
 
 ## Contributions
 

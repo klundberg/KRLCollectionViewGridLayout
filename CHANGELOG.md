@@ -1,5 +1,21 @@
 # KRLCollectionViewGridLayout CHANGELOG
 
+## 0.4.0
+
+* Added KRLCollectionViewDelegateGridLayout protocol with methods that control various metrics on a per-section basis, including:
+ * aspect ratio
+ * number of items per line
+ * section inset
+ * footer length
+ * header length
+ * line spacing
+ * inter-item spacing
+* Section insets now work more similarly to UICollectionViewFlowLayout. Before they were applying to the header/footer in addition to the items in a section. Now they only apply to the items, and the header/footer are always full width/height depending on scroll direction. 
+
+## 0.3.1
+
+* Removed some extraneous types that were not yet finished.
+
 ## 0.3.0
 
 * Changed headerReferenceSize/footerReferenceSize (CGSize) properties to headerReferenceLength/footerReferenceLength (CGFloat) properties.
