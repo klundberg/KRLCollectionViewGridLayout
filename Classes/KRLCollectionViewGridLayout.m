@@ -131,7 +131,8 @@
 - (NSInteger)rowsInSection:(NSInteger)section
 {
     NSInteger itemsInSection = [self.collectionView numberOfItemsInSection:section];
-    NSInteger rowsInSection = itemsInSection / self.numberOfItemsPerLine + (itemsInSection % self.numberOfItemsPerLine > 0 ? 1 : 0);
+    NSInteger numberOfItemsPerLine = [self numberOfItemsPerLineForSection:section];
+    NSInteger rowsInSection = itemsInSection / numberOfItemsPerLine + (itemsInSection % numberOfItemsPerLine > 0 ? 1 : 0);
     return rowsInSection;
 }
 
@@ -288,6 +289,24 @@
     }
 }
 
+- (NSInteger)numberOfItemsPerLineForSection:(NSInteger)section
+{
+    if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:numberItemsPerLineForSectionAtIndex:)]) {
+        return [(id)self.collectionView.delegate collectionView:self.collectionView layout:self numberItemsPerLineForSectionAtIndex:section];
+    } else {
+        return self.numberOfItemsPerLine;
+    }
+}
+
+- (CGFloat)aspectRatioForSection:(NSInteger)section
+{
+    if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:aspectRatioForItemsInSectionAtIndex:)]) {
+        return [(id)self.collectionView.delegate collectionView:self.collectionView layout:self aspectRatioForItemsInSectionAtIndex:section];
+    } else {
+        return self.aspectRatio;
+    }
+}
+
 - (UICollectionViewLayoutAttributes *)layoutAttributesForCellAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
@@ -300,8 +319,9 @@
 - (CGRect)frameForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGSize cellSize = [self cellSizeInSection:indexPath.section];
-    NSInteger rowOfItem = indexPath.item / self.numberOfItemsPerLine;
-    NSInteger locationInRowOfItem = indexPath.item % self.numberOfItemsPerLine;
+    NSInteger numberOfItemsPerLine = [self numberOfItemsPerLineForSection:indexPath.section];
+    NSInteger rowOfItem = indexPath.item / numberOfItemsPerLine;
+    NSInteger locationInRowOfItem = indexPath.item % numberOfItemsPerLine;
 
     CGRect frame = CGRectZero;
 
@@ -339,13 +359,14 @@
 - (CGSize)cellSizeInSection:(NSInteger)section
 {
     CGFloat usableSpace = [self usableSpaceInSection:section];
-    CGFloat cellLength = usableSpace / self.numberOfItemsPerLine;
+    CGFloat cellLength = usableSpace / [self numberOfItemsPerLineForSection:section];
+    CGFloat aspectRatio = [self aspectRatioForSection:section];
 
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
         return CGSizeMake(cellLength,
-                          cellLength * (1.0 / self.aspectRatio));
+                          cellLength * (1.0 / aspectRatio));
     } else {
-        return CGSizeMake(cellLength * self.aspectRatio,
+        return CGSizeMake(cellLength * aspectRatio,
                           cellLength);
     }
 }
@@ -354,17 +375,18 @@
 {
     UIEdgeInsets sectionInset = [self sectionInsetForSection:section];
     CGFloat interitemSpacing = [self interitemSpacingForSection:section];
+    NSInteger numberOfItemsPerLine = [self numberOfItemsPerLineForSection:section];
 
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
         return (self.collectionViewContentSize.width
                 - sectionInset.left
                 - sectionInset.right
-                - ((self.numberOfItemsPerLine - 1) * interitemSpacing));
+                - ((numberOfItemsPerLine - 1) * interitemSpacing));
     } else {
         return (self.collectionViewContentSize.height
                 - sectionInset.top
                 - sectionInset.bottom
-                - ((self.numberOfItemsPerLine - 1) * interitemSpacing));
+                - ((numberOfItemsPerLine - 1) * interitemSpacing));
     }
 }
 

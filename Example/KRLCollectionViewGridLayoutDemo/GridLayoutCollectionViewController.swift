@@ -96,7 +96,11 @@ extension GridLayoutCollectionViewController: KRLCollectionViewDelegateGridLayou
         return CGFloat((section + 1) * 20)
     }
 
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, numberOfColumnsForSectionAtIndex section: Int) -> Int {
-//        return self.layout.numberOfItemsPerLine + (section * 1)
-//    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, numberItemsPerLineForSectionAtIndex section: Int) -> Int {
+        return self.layout.numberOfItemsPerLine + (section * 1)
+    }
+
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, aspectRatioForItemsInSectionAtIndex section: Int) -> CGFloat {
+        return CGFloat(1 + section)
+    }
 }

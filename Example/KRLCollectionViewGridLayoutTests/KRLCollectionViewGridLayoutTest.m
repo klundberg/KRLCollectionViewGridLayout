@@ -662,4 +662,42 @@
     assertThat(RECTVALUE(footer3.frame), equalTo(RECTVALUE(CGRectMake(0, 350, 500, 20))));
 }
 
+- (void)testIndividualSectionCanHaveVariableColumnCount
+{
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.interitemSpacing = 0;
+
+    controller.columnCounts[@0] = @1;
+    controller.columnCounts[@1] = @2;
+
+    controller.items = @[@[@1],
+                         @[@2]];
+    [controller.view layoutIfNeeded];
+
+    UICollectionViewCell *cell1 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    UICollectionViewCell *cell2 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:1]];
+
+    assertThat(RECTVALUE(cell1.frame), equalTo(RECTVALUE(CGRectMake(0, 0, 500, 500))));
+    assertThat(RECTVALUE(cell2.frame), equalTo(RECTVALUE(CGRectMake(0, 500, 250, 250))));
+}
+
+- (void)testIndividualSectionCanHaveVariableAspectRatios
+{
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.interitemSpacing = 0;
+
+    controller.aspectRatios[@0] = @2;
+    controller.aspectRatios[@1] = @(0.5);
+
+    controller.items = @[@[@1],
+                         @[@2]];
+    [controller.view layoutIfNeeded];
+
+    UICollectionViewCell *cell1 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    UICollectionViewCell *cell2 = [controller.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:1]];
+
+    assertThat(RECTVALUE(cell1.frame), equalTo(RECTVALUE(CGRectMake(0, 0, 500, 250))));
+    assertThat(RECTVALUE(cell2.frame), equalTo(RECTVALUE(CGRectMake(0, 250, 500, 1000))));
+}
+
 @end

@@ -116,4 +116,22 @@
     return [value doubleValue];
 }
 
+- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout numberItemsPerLineForSectionAtIndex:(NSInteger)section
+{
+    NSNumber *value = self.columnCounts[@(section)];
+    if (value == nil) {
+        return [(id)collectionViewLayout numberOfItemsPerLine];
+    }
+    return [value integerValue];
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout aspectRatioForItemsInSectionAtIndex:(NSInteger)section
+{
+    NSNumber *value = self.aspectRatios[@(section)];
+    if (value == nil) {
+        return [(id)collectionViewLayout aspectRatio];
+    }
+    return [value doubleValue];
+}
+
 @end

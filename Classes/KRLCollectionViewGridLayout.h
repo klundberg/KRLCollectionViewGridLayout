@@ -52,7 +52,18 @@ NS_ASSUME_NONNULL_BEGIN
  @return The number of columns the layout should use for the section at the given index.
  */
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout numberOfColumnsForSectionAtIndex:(NSInteger)section;
+- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout numberItemsPerLineForSectionAtIndex:(NSInteger)section;
+
+/**
+ Asks the delegate for the aspect ratio that items in the given section should have
+
+ @param collectionView       The collection view object displaying the grid layout.
+ @param collectionViewLayout The layout object requesting the information.
+ @param section              The index number of the section whose item aspect ratio is needed
+
+ @return The aspect ratio the layout should use for items in the section at the given index.
+ */
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout aspectRatioForItemsInSectionAtIndex:(NSInteger)section;
 
 /**
  Asks the delegate for the length of the header in the given section.
