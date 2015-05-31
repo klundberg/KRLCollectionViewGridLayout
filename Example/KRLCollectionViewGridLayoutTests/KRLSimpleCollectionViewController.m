@@ -28,6 +28,8 @@
         _interitemSpacings = [NSMutableDictionary dictionary];
         _headerLengths = [NSMutableDictionary dictionary];
         _footerLengths = [NSMutableDictionary dictionary];
+        _columnCounts = [NSMutableDictionary dictionary];
+        _aspectRatios = [NSMutableDictionary dictionary];
     }
     return self;
 }

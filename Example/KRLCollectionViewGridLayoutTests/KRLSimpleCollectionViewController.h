@@ -17,5 +17,7 @@
 @property (nonatomic, copy, readonly) NSMutableDictionary *interitemSpacings;
 @property (nonatomic, copy, readonly) NSMutableDictionary *headerLengths;
 @property (nonatomic, copy, readonly) NSMutableDictionary *footerLengths;
+@property (nonatomic, copy, readonly) NSMutableDictionary *columnCounts;
+@property (nonatomic, copy, readonly) NSMutableDictionary *aspectRatios;
 
 @end
