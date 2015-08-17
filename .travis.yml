@@ -12,4 +12,5 @@ script:
 - cd Example
 - pod install
 - set -o pipefail && xcodebuild test -workspace KRLCollectionViewGridLayoutDemo.xcworkspace -scheme KRLCollectionViewGridLayoutDemo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+- cd ..
 - pod lib lint --quick
