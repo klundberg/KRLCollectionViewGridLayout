@@ -1,13 +1,15 @@
+# references:
+# * http://www.objc.io/issue-6/travis-ci.html
+# * https://github.com/supermarin/xcpretty#usage
+osx_image: xcode6.4
+
 language: objective-c
-osx_image: beta-xcode6.3
-
-xcode_workspace: Example/KRLCollectionViewGridLayoutDemo.xcworkspace
-xcode_scheme: KRLCollectionViewGridLayoutDemo
-xcode_sdk: iphonesimulator
-
 before_install:
-  - gem update cocoapods -N
+- gem install cocoapods # Since Travis is not always on latest version
 install:
-  - cd Example
-  - pod install
-  - cd ..
+- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+script:
+- cd Example
+- pod install
+- set -o pipefail && xcodebuild test -workspace KRLCollectionViewGridLayoutDemo.xcworkspace -scheme KRLCollectionViewGridLayoutDemo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+- pod lib lint --quick
