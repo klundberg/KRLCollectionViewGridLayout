@@ -5,7 +5,7 @@ osx_image: xcode6.4
 
 language: objective-c
 before_install:
-- gem install cocoapods # Since Travis is not always on latest version
+- gem install cocoapods --no-rdoc --no-ri --no-document --quiet # Since Travis is not always on latest version
 install:
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 script:
