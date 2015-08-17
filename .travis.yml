@@ -11,6 +11,6 @@ install:
 script:
 - cd Example
 - pod install
-- set -o pipefail && xcodebuild test -workspace KRLCollectionViewGridLayoutDemo.xcworkspace -scheme KRLCollectionViewGridLayoutDemo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+- set -o pipefail && xcodebuild test -workspace KRLCollectionViewGridLayoutDemo.xcworkspace -scheme KRLCollectionViewGridLayoutDemo -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6' ONLY_ACTIVE_ARCH=NO | xcpretty -c
 - cd ..
 - pod lib lint --quick
