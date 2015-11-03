@@ -2,6 +2,7 @@
 
 [![Build Status](http://img.shields.io/travis/klundberg/KRLCollectionViewGridLayout/master.svg?style=flat)](https://travis-ci.org/klundberg/KRLCollectionViewGridLayout)
 [![Version](https://img.shields.io/cocoapods/v/KRLCollectionViewGridLayout.svg?style=flat)](http://cocoadocs.org/docsets/KRLCollectionViewGridLayout)
+[![codecov.io](https://img.shields.io/codecov/c/github/klundberg/KRLCollectionViewGridLayout.svg)](http://codecov.io/github/klundberg/KRLCollectionViewGridLayout)
 [![License](https://img.shields.io/cocoapods/l/KRLCollectionViewGridLayout.svg?style=flat)](http://cocoadocs.org/docsets/KRLCollectionViewGridLayout)
 [![Platform](https://img.shields.io/cocoapods/p/KRLCollectionViewGridLayout.svg?style=flat)](http://cocoadocs.org/docsets/KRLCollectionViewGridLayout)
 
