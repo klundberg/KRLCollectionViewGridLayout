@@ -1,9 +1,7 @@
 platform :ios, '6.0'
 inhibit_all_warnings!
 
-xcodeproj 'KRLCollectionViewGridLayoutDemo'
-
-podspec :path => '../KRLCollectionViewGridLayout.podspec'
+podspec :path => './KRLCollectionViewGridLayout.podspec'
 
 target :KRLCollectionViewGridLayoutTests do
     pod 'OCMockito'

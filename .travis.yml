@@ -9,10 +9,8 @@ before_install:
 install:
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 script:
-- cd Example
 - pod install
-- set -o pipefail && xcodebuild test -workspace KRLCollectionViewGridLayoutDemo.xcworkspace -scheme KRLCollectionViewGridLayoutDemo -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6' ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -c
-- cd ..
+- set -o pipefail && xcodebuild test -workspace KRLCollectionViewGridLayout.xcworkspace -scheme KRLCollectionViewGridLayoutDemo -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6s' ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -c
 - pod lib lint --quick
 
 after_success:

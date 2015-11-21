@@ -42,7 +42,7 @@
 /* Begin PBXFileReference section */
 		301AB32187E7118F2DAC1925 /* Pods-KRLCollectionViewGridLayoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRLCollectionViewGridLayoutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KRLCollectionViewGridLayoutTests/Pods-KRLCollectionViewGridLayoutTests.release.xcconfig"; sourceTree = "<group>"; };
 		5B349C1D612246D5820B6E8A /* libPods-KRLCollectionViewGridLayoutTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KRLCollectionViewGridLayoutTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		791EEB3D1957D297009DC47A /* KRLCollectionViewGridLayout.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.python; fileEncoding = 4; name = KRLCollectionViewGridLayout.podspec; path = ../KRLCollectionViewGridLayout.podspec; sourceTree = "<group>"; };
+		791EEB3D1957D297009DC47A /* KRLCollectionViewGridLayout.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.python; fileEncoding = 4; path = KRLCollectionViewGridLayout.podspec; sourceTree = "<group>"; };
 		791EEB471957DA9E009DC47A /* KRLCollectionViewGridLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KRLCollectionViewGridLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		791EEB4D1957DA9E009DC47A /* KRLCollectionViewGridLayoutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KRLCollectionViewGridLayoutTests-Info.plist"; sourceTree = "<group>"; };
 		791EEB4F1957DA9E009DC47A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -50,10 +50,11 @@
 		791EEB591957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRLCollectionViewGridLayoutTest.m; sourceTree = "<group>"; };
 		791EEB5B1957DB2F009DC47A /* KRLSimpleCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRLSimpleCollectionViewController.h; sourceTree = "<group>"; };
 		791EEB5C1957DB2F009DC47A /* KRLSimpleCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRLSimpleCollectionViewController.m; sourceTree = "<group>"; };
-		791EEB7B196A59CF009DC47A /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
-		791EEB7C196A59CF009DC47A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		791EEB7D196A59CF009DC47A /* Rakefile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = Rakefile; path = ../Rakefile; sourceTree = "<group>"; };
-		791EEB7E196A59CF009DC47A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		791EEB7B196A59CF009DC47A /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		791EEB7C196A59CF009DC47A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		791EEB7D196A59CF009DC47A /* Rakefile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Rakefile; sourceTree = "<group>"; };
+		791EEB7E196A59CF009DC47A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		79453C501C01224400CC74C0 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		794C057718E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KRLCollectionViewGridLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		794C057A18E5217600A94FC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		794C057C18E5217600A94FC3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,7 +67,6 @@
 		794C059C18E5217600A94FC3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		796D17C21A720C9900E34848 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		796D17EA1A720DC200E34848 /* GridLayoutCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayoutCollectionViewController.swift; sourceTree = "<group>"; };
-		79D757D0196B86E70044DCFF /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		79D757D2196E51370044DCFF /* KRLCollectionViewGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRLCollectionViewGridLayout.h; path = ../Classes/KRLCollectionViewGridLayout.h; sourceTree = "<group>"; };
 		79D757D3196E51370044DCFF /* KRLCollectionViewGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRLCollectionViewGridLayout.m; path = ../Classes/KRLCollectionViewGridLayout.m; sourceTree = "<group>"; };
 		79DB11D31A71FF290047FEE8 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
@@ -119,7 +119,8 @@
 				791EEB5C1957DB2F009DC47A /* KRLSimpleCollectionViewController.m */,
 				791EEB4C1957DA9E009DC47A /* Supporting Files */,
 			);
-			path = KRLCollectionViewGridLayoutTests;
+			name = KRLCollectionViewGridLayoutTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		791EEB4C1957DA9E009DC47A /* Supporting Files */ = {
@@ -145,7 +146,7 @@
 				791EEB7D196A59CF009DC47A /* Rakefile */,
 				791EEB7E196A59CF009DC47A /* README.md */,
 				791EEB3D1957D297009DC47A /* KRLCollectionViewGridLayout.podspec */,
-				79D757D0196B86E70044DCFF /* .travis.yml */,
+				79453C501C01224400CC74C0 /* .travis.yml */,
 				780B2961A5FF2D0A10C9A3CC /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -184,7 +185,8 @@
 				794C058C18E5217600A94FC3 /* Main.storyboard */,
 				794C058118E5217600A94FC3 /* Supporting Files */,
 			);
-			path = KRLCollectionViewGridLayoutDemo;
+			name = KRLCollectionViewGridLayoutDemo;
+			path = Demo;
 			sourceTree = "<group>";
 		};
 		794C058118E5217600A94FC3 /* Supporting Files */ = {
@@ -205,6 +207,7 @@
 				79D757D3196E51370044DCFF /* KRLCollectionViewGridLayout.m */,
 			);
 			name = KRLCollectionViewGridLayout;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +222,7 @@
 				791EEB441957DA9E009DC47A /* Frameworks */,
 				791EEB451957DA9E009DC47A /* Resources */,
 				61A7F742CBA14ACA96795812 /* Copy Pods Resources */,
+				7896B5379CEBC182A62201C4 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,7 +259,8 @@
 			attributes = {
 				CLASSPREFIX = KRL;
 				LastSwiftMigration = 0710;
-				LastUpgradeCheck = 0510;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Kevin Lundberg";
 				TargetAttributes = {
 					791EEB461957DA9E009DC47A = {
@@ -263,7 +268,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 794C057218E5217600A94FC3 /* Build configuration list for PBXProject "KRLCollectionViewGridLayoutDemo" */;
+			buildConfigurationList = 794C057218E5217600A94FC3 /* Build configuration list for PBXProject "KRLCollectionViewGridLayout" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -335,6 +340,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KRLCollectionViewGridLayoutTests/Pods-KRLCollectionViewGridLayoutTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7896B5379CEBC182A62201C4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KRLCollectionViewGridLayoutTests/Pods-KRLCollectionViewGridLayoutTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -409,13 +429,13 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KRLCollectionViewGridLayoutTests/KRLCollectionViewGridLayoutTests-Prefix.pch";
+				GCC_PREFIX_HEADER = "Tests/KRLCollectionViewGridLayoutTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "KRLCollectionViewGridLayoutTests/KRLCollectionViewGridLayoutTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				INFOPLIST_FILE = "Tests/KRLCollectionViewGridLayoutTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.klundberg.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -433,9 +453,9 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KRLCollectionViewGridLayoutTests/KRLCollectionViewGridLayoutTests-Prefix.pch";
-				INFOPLIST_FILE = "KRLCollectionViewGridLayoutTests/KRLCollectionViewGridLayoutTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				GCC_PREFIX_HEADER = "Tests/KRLCollectionViewGridLayoutTests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/KRLCollectionViewGridLayoutTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.klundberg.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -460,6 +480,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -521,12 +542,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KRLCollectionViewGridLayoutDemo/KRLCollectionViewGridLayoutDemo-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/KRLCollectionViewGridLayoutDemo/KRLGridLayoutDemo-Info.plist";
+				GCC_PREFIX_HEADER = "Demo/KRLCollectionViewGridLayoutDemo-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/KRLCollectionViewGridLayoutDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.klundberg.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
-				SWIFT_OBJC_BRIDGING_HEADER = "KRLCollectionViewGridLayoutDemo/KRLCollectionViewGridLayoutDemo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Demo/KRLCollectionViewGridLayoutDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
@@ -539,12 +561,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KRLCollectionViewGridLayoutDemo/KRLCollectionViewGridLayoutDemo-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/KRLCollectionViewGridLayoutDemo/KRLGridLayoutDemo-Info.plist";
+				GCC_PREFIX_HEADER = "Demo/KRLCollectionViewGridLayoutDemo-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/KRLCollectionViewGridLayoutDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.klundberg.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
-				SWIFT_OBJC_BRIDGING_HEADER = "KRLCollectionViewGridLayoutDemo/KRLCollectionViewGridLayoutDemo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Demo/KRLCollectionViewGridLayoutDemo-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -561,7 +584,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		794C057218E5217600A94FC3 /* Build configuration list for PBXProject "KRLCollectionViewGridLayoutDemo" */ = {
+		794C057218E5217600A94FC3 /* Build configuration list for PBXProject "KRLCollectionViewGridLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				794C05AA18E5217600A94FC3 /* Debug */,
