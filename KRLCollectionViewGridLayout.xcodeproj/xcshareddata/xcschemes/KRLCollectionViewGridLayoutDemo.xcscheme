@@ -28,8 +28,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "792DAF691C0153C4008FBE10"
-               BuildableName = "KRLCollectionViewGridLayout.framework"
-               BlueprintName = "KRLCollectionViewGridLayout"
+               BuildableName = "KRLCollectionViewGridLayout-iOS.framework"
+               BlueprintName = "KRLCollectionViewGridLayout-iOS"
                ReferencedContainer = "container:KRLCollectionViewGridLayout.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -94,6 +94,14 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BuildableName = "Pods"
+            BlueprintName = "Pods"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

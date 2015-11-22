@@ -15,8 +15,8 @@
 		791EEB501957DA9E009DC47A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 791EEB4E1957DA9E009DC47A /* InfoPlist.strings */; };
 		791EEB5A1957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 791EEB591957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m */; };
 		791EEB5D1957DB2F009DC47A /* KRLSimpleCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791EEB5C1957DB2F009DC47A /* KRLSimpleCollectionViewController.m */; };
-		792DAF711C0153C4008FBE10 /* KRLCollectionViewGridLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792DAF6A1C0153C4008FBE10 /* KRLCollectionViewGridLayout.framework */; };
-		792DAF721C0153C4008FBE10 /* KRLCollectionViewGridLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 792DAF6A1C0153C4008FBE10 /* KRLCollectionViewGridLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		792DAF711C0153C4008FBE10 /* KRLCollectionViewGridLauyout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792DAF6A1C0153C4008FBE10 /* KRLCollectionViewGridLauyout.framework */; };
+		792DAF721C0153C4008FBE10 /* KRLCollectionViewGridLauyout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 792DAF6A1C0153C4008FBE10 /* KRLCollectionViewGridLauyout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		792DAF791C015441008FBE10 /* KRLCollectionViewGridLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 79D757D2196E51370044DCFF /* KRLCollectionViewGridLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		792DAF7A1C015447008FBE10 /* KRLCollectionViewGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D757D3196E51370044DCFF /* KRLCollectionViewGridLayout.m */; };
 		792DAF7B1C0155E5008FBE10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794C057E18E5217600A94FC3 /* UIKit.framework */; };
@@ -58,7 +58,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				792DAF721C0153C4008FBE10 /* KRLCollectionViewGridLayout.framework in Embed Frameworks */,
+				792DAF721C0153C4008FBE10 /* KRLCollectionViewGridLauyout.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,7 +79,7 @@
 		791EEB7B196A59CF009DC47A /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		791EEB7C196A59CF009DC47A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		791EEB7E196A59CF009DC47A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		792DAF6A1C0153C4008FBE10 /* KRLCollectionViewGridLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KRLCollectionViewGridLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		792DAF6A1C0153C4008FBE10 /* KRLCollectionViewGridLauyout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KRLCollectionViewGridLauyout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		792DAF771C015420008FBE10 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79453C501C01224400CC74C0 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		794C057718E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KRLCollectionViewGridLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				794C057D18E5217600A94FC3 /* CoreGraphics.framework in Frameworks */,
-				792DAF711C0153C4008FBE10 /* KRLCollectionViewGridLayout.framework in Frameworks */,
+				792DAF711C0153C4008FBE10 /* KRLCollectionViewGridLauyout.framework in Frameworks */,
 				794C057F18E5217600A94FC3 /* UIKit.framework in Frameworks */,
 				794C057B18E5217600A94FC3 /* Foundation.framework in Frameworks */,
 			);
@@ -191,7 +191,7 @@
 			children = (
 				794C057718E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo.app */,
 				791EEB471957DA9E009DC47A /* KRLCollectionViewGridLayoutTests.xctest */,
-				792DAF6A1C0153C4008FBE10 /* KRLCollectionViewGridLayout.framework */,
+				792DAF6A1C0153C4008FBE10 /* KRLCollectionViewGridLauyout.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,9 +281,9 @@
 			productReference = 791EEB471957DA9E009DC47A /* KRLCollectionViewGridLayoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		792DAF691C0153C4008FBE10 /* KRLCollectionViewGridLayout */ = {
+		792DAF691C0153C4008FBE10 /* KRLCollectionViewGridLayout-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 792DAF751C0153C5008FBE10 /* Build configuration list for PBXNativeTarget "KRLCollectionViewGridLayout" */;
+			buildConfigurationList = 792DAF751C0153C5008FBE10 /* Build configuration list for PBXNativeTarget "KRLCollectionViewGridLayout-iOS" */;
 			buildPhases = (
 				792DAF651C0153C4008FBE10 /* Sources */,
 				792DAF661C0153C4008FBE10 /* Frameworks */,
@@ -294,9 +294,9 @@
 			);
 			dependencies = (
 			);
-			name = KRLCollectionViewGridLayout;
+			name = "KRLCollectionViewGridLayout-iOS";
 			productName = KRLCollectionViewGridLayout;
-			productReference = 792DAF6A1C0153C4008FBE10 /* KRLCollectionViewGridLayout.framework */;
+			productReference = 792DAF6A1C0153C4008FBE10 /* KRLCollectionViewGridLauyout.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		794C057618E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo */ = {
@@ -348,7 +348,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				792DAF691C0153C4008FBE10 /* KRLCollectionViewGridLayout */,
+				792DAF691C0153C4008FBE10 /* KRLCollectionViewGridLayout-iOS */,
 				794C057618E5217600A94FC3 /* KRLCollectionViewGridLayoutDemo */,
 				791EEB461957DA9E009DC47A /* KRLCollectionViewGridLayoutTests */,
 			);
@@ -472,7 +472,7 @@
 		};
 		792DAF701C0153C4008FBE10 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 792DAF691C0153C4008FBE10 /* KRLCollectionViewGridLayout */;
+			target = 792DAF691C0153C4008FBE10 /* KRLCollectionViewGridLayout-iOS */;
 			targetProxy = 792DAF6F1C0153C4008FBE10 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -554,7 +554,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.klundberg.KRLCollectionViewGridLayout;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KRLCollectionViewGridLauyout;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -581,7 +581,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.klundberg.KRLCollectionViewGridLayout;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KRLCollectionViewGridLauyout;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -710,7 +710,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		792DAF751C0153C5008FBE10 /* Build configuration list for PBXNativeTarget "KRLCollectionViewGridLayout" */ = {
+		792DAF751C0153C5008FBE10 /* Build configuration list for PBXNativeTarget "KRLCollectionViewGridLayout-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				792DAF731C0153C5008FBE10 /* Debug */,
