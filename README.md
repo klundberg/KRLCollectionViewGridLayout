@@ -38,16 +38,21 @@ You can either run unit tests on the library itself, or run the sample project f
 
 ## Requirements
 
-**Through Cocoapods:** iOS 6.0 or greater, and ARC.
+* iOS 6.0
+* tvOS 9.0
 
 Example project requires Xcode 7.1+, can only run in iOS 8.0+. 
 
 ## Installation
 
+### CocoaPods
+
 KRLCollectionViewGridLayout is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
     pod "KRLCollectionViewGridLayout", "~> 0.4.1"
+
+### Carthage
 
 You can also install it via [Carthage](https://github.com/Carthage/Carthage). To do so, add the following to your Cartfile:
 
