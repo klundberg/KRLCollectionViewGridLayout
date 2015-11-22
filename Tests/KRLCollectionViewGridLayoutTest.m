@@ -6,16 +6,12 @@
 //  Copyright (c) 2014 Kevin Lundberg. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+@import XCTest;
+@import KRLCollectionViewGridLayout;
+
+#import <OCHamcrest/OCHamcrest.h>
 
 #import "KRLSimpleCollectionViewController.h"
-
-#import "KRLCollectionViewGridLayout.h"
-
-#define HC_SHORTHAND 1
-#import <OCHamcrest/OCHamcrest.h>
-#define MOCKITO_SHORTHAND 1
-#import <OCMockito/OCMockito.h>
 
 #define RECTVALUE(rect) [NSValue valueWithCGRect:rect]
 

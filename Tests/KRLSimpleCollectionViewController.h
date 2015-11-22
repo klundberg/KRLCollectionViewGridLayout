@@ -1,7 +1,8 @@
 //  Copyright (c) 2014 Kevin Lundberg.
 
 #import <UIKit/UIKit.h>
-#import "KRLCollectionViewGridLayout.h"
+
+@import KRLCollectionViewGridLayout;
 
 /**
  Class to help test the grid layout
