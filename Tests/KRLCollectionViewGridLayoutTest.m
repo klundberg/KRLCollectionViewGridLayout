@@ -8,8 +8,7 @@
 
 @import XCTest;
 @import KRLCollectionViewGridLayout;
-
-#import <OCHamcrest/OCHamcrest.h>
+@import OCHamcrest;
 
 #import "KRLSimpleCollectionViewController.h"
 

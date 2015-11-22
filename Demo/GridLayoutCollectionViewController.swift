@@ -1,11 +1,12 @@
 //  Copyright (c) 2015 Kevin Lundberg.
 
 import UIKit
+import KRLCollectionViewGridLayout
 
 private let reuseIdentifier = "Cell"
 private let headerFooterIdentifier = "headerFooter"
 
-class GridLayoutCollectionViewController: UICollectionViewController, UIActionSheetDelegate {
+class GridLayoutCollectionViewController: UICollectionViewController {
 
     var layout: KRLCollectionViewGridLayout {
         return self.collectionView?.collectionViewLayout as! KRLCollectionViewGridLayout
@@ -16,9 +17,8 @@ class GridLayoutCollectionViewController: UICollectionViewController, UIActionSh
 
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
-        let nib = UINib(nibName: "HeaderFooterView", bundle: nil)
-        collectionView?.registerNib(nib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerFooterIdentifier)
-        collectionView?.registerNib(nib, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: headerFooterIdentifier)
+        collectionView?.registerClass(HeaderFooterView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerFooterIdentifier)
+        collectionView?.registerClass(HeaderFooterView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: headerFooterIdentifier)
     }
 
     @IBAction func changeColumnsTapped(sender: AnyObject?) {

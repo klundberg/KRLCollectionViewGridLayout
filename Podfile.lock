@@ -2,9 +2,19 @@ PODS:
   - OCHamcrest (5.0.0)
 
 DEPENDENCIES:
-  - OCHamcrest
+  - OCHamcrest (from `https://github.com/klundberg/OCHamcrest.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  OCHamcrest:
+    :branch: master
+    :git: https://github.com/klundberg/OCHamcrest.git
+
+CHECKOUT OPTIONS:
+  OCHamcrest:
+    :commit: cf818fd5b0119adb81cf8e1d06b571512755748e
+    :git: https://github.com/klundberg/OCHamcrest.git
 
 SPEC CHECKSUMS:
-  OCHamcrest: a556dc3c712c43c43837046c7a5cdc913abd8305
+  OCHamcrest: 2c2e4521722fdfdb77418e0a56153f5f0e3708dd
 
 COCOAPODS: 0.39.0

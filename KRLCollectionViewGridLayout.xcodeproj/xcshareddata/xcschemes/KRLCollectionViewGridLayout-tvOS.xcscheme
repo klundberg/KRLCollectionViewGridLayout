@@ -14,22 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BuildableName = "Pods"
-               BlueprintName = "Pods"
-               ReferencedContainer = "container:Pods.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "792DAF691C0153C4008FBE10"
-               BuildableName = "KRLCollectionViewGridLayout-iOS.framework"
-               BlueprintName = "KRLCollectionViewGridLayout-iOS"
+               BlueprintIdentifier = "792DAFD01C015E6C008FBE10"
+               BuildableName = "KRLCollectionViewGridLayout.framework"
+               BlueprintName = "KRLCollectionViewGridLayout-tvOS"
                ReferencedContainer = "container:KRLCollectionViewGridLayout.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "791EEB461957DA9E009DC47A"
-               BuildableName = "KRLCollectionViewGridLayoutTests.xctest"
-               BlueprintName = "KRLCollectionViewGridLayoutTests"
+               BlueprintIdentifier = "792DAFD91C015E6C008FBE10"
+               BuildableName = "KRLCollectionViewGridLayout-tvOSTests.xctest"
+               BlueprintName = "KRLCollectionViewGridLayout-tvOSTests"
                ReferencedContainer = "container:KRLCollectionViewGridLayout.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "794C057618E5217600A94FC3"
-            BuildableName = "KRLCollectionViewGridLayoutDemo.app"
-            BlueprintName = "KRLCollectionViewGridLayoutDemo"
+            BlueprintIdentifier = "792DAFD01C015E6C008FBE10"
+            BuildableName = "KRLCollectionViewGridLayout.framework"
+            BlueprintName = "KRLCollectionViewGridLayout-tvOS"
             ReferencedContainer = "container:KRLCollectionViewGridLayout.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,16 +62,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "794C057618E5217600A94FC3"
-            BuildableName = "KRLCollectionViewGridLayoutDemo.app"
-            BlueprintName = "KRLCollectionViewGridLayoutDemo"
+            BlueprintIdentifier = "792DAFD01C015E6C008FBE10"
+            BuildableName = "KRLCollectionViewGridLayout.framework"
+            BlueprintName = "KRLCollectionViewGridLayout-tvOS"
             ReferencedContainer = "container:KRLCollectionViewGridLayout.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -97,9 +83,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BuildableName = "Pods"
-            BlueprintName = "Pods"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "792DAFD01C015E6C008FBE10"
+            BuildableName = "KRLCollectionViewGridLayout.framework"
+            BlueprintName = "KRLCollectionViewGridLayout-tvOS"
+            ReferencedContainer = "container:KRLCollectionViewGridLayout.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

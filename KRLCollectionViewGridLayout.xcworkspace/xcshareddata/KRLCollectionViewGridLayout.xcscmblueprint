@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8D43CEF8D9E93E02095E95B7C63C4EFE3D5647E5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F03E09D7108B6B558326B4A7FA105E304FD0FE55" : 0,
+    "8D43CEF8D9E93E02095E95B7C63C4EFE3D5647E5" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "81ACE449-5251-4327-BAF8-D72BF78DFF30",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F03E09D7108B6B558326B4A7FA105E304FD0FE55" : "OCHamcrest\/",
+    "8D43CEF8D9E93E02095E95B7C63C4EFE3D5647E5" : "KRLCollectionViewGridLayout\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "KRLCollectionViewGridLayout",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "KRLCollectionViewGridLayout.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/klundberg\/KRLCollectionViewGridLayout.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8D43CEF8D9E93E02095E95B7C63C4EFE3D5647E5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/klundberg\/OCHamcrest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F03E09D7108B6B558326B4A7FA105E304FD0FE55"
+    }
+  ]
+}
