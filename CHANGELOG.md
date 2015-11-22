@@ -1,5 +1,10 @@
 # KRLCollectionViewGridLayout CHANGELOG
 
+## 0.4.1
+
+* Reorganized repo and added framework iOS target
+* Added tvOS as a supported platform along with tvOS framework target and (barebones) demo
+
 ## 0.4.0
 
 * Added KRLCollectionViewDelegateGridLayout protocol with methods that control various metrics on a per-section basis, including:

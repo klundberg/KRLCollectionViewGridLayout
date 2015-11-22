@@ -3,6 +3,7 @@
 [![Build Status](http://img.shields.io/travis/klundberg/KRLCollectionViewGridLayout/master.svg?style=flat)](https://travis-ci.org/klundberg/KRLCollectionViewGridLayout)
 [![Version](https://img.shields.io/cocoapods/v/KRLCollectionViewGridLayout.svg?style=flat)](http://cocoadocs.org/docsets/KRLCollectionViewGridLayout)
 [![codecov.io](https://img.shields.io/codecov/c/github/klundberg/KRLCollectionViewGridLayout.svg)](http://codecov.io/github/klundberg/KRLCollectionViewGridLayout)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/KRLCollectionViewGridLayout.svg?style=flat)](http://cocoadocs.org/docsets/KRLCollectionViewGridLayout)
 [![Platform](https://img.shields.io/cocoapods/p/KRLCollectionViewGridLayout.svg?style=flat)](http://cocoadocs.org/docsets/KRLCollectionViewGridLayout)
 
@@ -37,16 +38,20 @@ You can either run unit tests on the library itself, or run the sample project f
 
 ## Requirements
 
-iOS 6.0 or greater, and ARC.
+**Through Cocoapods:** iOS 6.0 or greater, and ARC.
 
-Example project requires Xcode 6.3, can only run in iOS 8.0+. 
+Example project requires Xcode 7.1+, can only run in iOS 8.0+. 
 
 ## Installation
 
-KRLCollectionViewGridLayout is available through [CocoaPods](http://cocoapods.org). To install
+KRLCollectionViewGridLayout is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod "KRLCollectionViewGridLayout"
+    pod "KRLCollectionViewGridLayout", "~> 0.4.1"
+
+You can also install it via [Carthage](https://github.com/Carthage/Carthage). To do so, add the following to your Cartfile:
+
+    github "klundberg/KRLCollectionViewFlowLayout" ~> 0.4.1
 
 ## Author
 
