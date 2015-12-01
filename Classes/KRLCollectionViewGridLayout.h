@@ -2,12 +2,6 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for KRLGridThing.
-FOUNDATION_EXPORT double KRLCollectionViewGridLayoutVersionNumber;
-
-//! Project version string for KRLGridThing.
-FOUNDATION_EXPORT const unsigned char KRLCollectionViewGridLayoutVersionString[];
-
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol KRLCollectionViewDelegateGridLayout <NSObject>
