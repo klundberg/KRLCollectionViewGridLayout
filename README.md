@@ -56,7 +56,7 @@ it, simply add the following line to your Podfile:
 
 You can also install it via [Carthage](https://github.com/Carthage/Carthage). To do so, add the following to your Cartfile:
 
-    github "klundberg/KRLCollectionViewFlowLayout" ~> 0.4.1
+    github "klundberg/KRLCollectionViewGridLayout" ~> 0.4.1
 
 ## Author
 
