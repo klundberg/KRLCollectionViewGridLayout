@@ -123,6 +123,7 @@
 		794C058D18E5217600A94FC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		794C059518E5217600A94FC3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		794C059C18E5217600A94FC3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		794FF6B71E61F467003D0AAC /* codecov.yaml */ = {isa = PBXFileReference; lastKnownFileType = text; path = codecov.yaml; sourceTree = "<group>"; };
 		796D17C21A720C9900E34848 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		796D17EA1A720DC200E34848 /* GridLayoutCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayoutCollectionViewController.swift; sourceTree = "<group>"; };
 		79D757D2196E51370044DCFF /* KRLCollectionViewGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRLCollectionViewGridLayout.h; path = ../Classes/KRLCollectionViewGridLayout.h; sourceTree = "<group>"; };
@@ -230,6 +231,7 @@
 				791EEB7C196A59CF009DC47A /* LICENSE */,
 				791EEB7E196A59CF009DC47A /* README.md */,
 				791EEB3D1957D297009DC47A /* KRLCollectionViewGridLayout.podspec */,
+				794FF6B71E61F467003D0AAC /* codecov.yaml */,
 				79453C501C01224400CC74C0 /* .travis.yml */,
 				7D5932E1194A60D0D5695A4D /* Pods */,
 			);
