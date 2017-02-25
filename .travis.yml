@@ -5,10 +5,12 @@ osx_image: xcode8.2
 language: objective-c
 
 env:
-- DESTINATION='platform=iOS Simulator,name=iPhone SE'        SCHEME='KRLCollectionViewGridLayout-iOS'
-- DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'  SCHEME='KRLCollectionViewGridLayout-tvOS'
+- DESTINATION="platform=iOS Simulator,name=iPhone SE"        SCHEME="KRLCollectionViewGridLayout-iOS"
+- DESTINATION="platform=tvOS Simulator,name=Apple TV 1080p"  SCHEME="KRLCollectionViewGridLayout-tvOS"
 
 before_install:
+- gem update cocoapods --no-rdoc --no-ri --no-document --quiet # Since Travis is not always on latest version
+- pod repo update
 - xcrun simctl delete DB794781-65A7-4884-8D00-AAC3CBD39A44 # workaround for https://github.com/travis-ci/travis-ci/issues/7031
 
 script:

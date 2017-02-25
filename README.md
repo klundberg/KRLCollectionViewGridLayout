@@ -41,7 +41,7 @@ You can either run unit tests on the library itself, or run the sample project f
 * iOS 6.0
 * tvOS 9.0
 
-Example project requires Xcode 7.1+, can only run in iOS 8.0+. 
+Example project requires Xcode 8.0+, can only run in iOS 8.0+ or tvOS 9.0+. 
 
 ## Installation
 
