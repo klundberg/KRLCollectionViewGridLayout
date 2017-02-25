@@ -5,17 +5,19 @@ workspace 'KRLCollectionViewGridLayout.xcworkspace'
 podspec :path => './KRLCollectionViewGridLayout.podspec'
 
 def testing_pods
-    pod 'OCHamcrest', :git => 'https://github.com/klundberg/OCHamcrest.git', :branch => 'master'
+    pod 'OCHamcrest'
 end
 
-target :iOSTests, :exclusive => true do
+target 'KRLCollectionViewGridLayout-iOSTests' do
+    inherit! :search_paths
     platform :ios, '8.0'
-    link_with 'KRLCollectionViewGridLayout-iOSTests'
+
     testing_pods
 end
 
-target :tvOSTests, :exclusive => true do
+target 'KRLCollectionViewGridLayout-tvOSTests' do
+    inherit! :search_paths
     platform :tvos, '9.0'
-    link_with 'KRLCollectionViewGridLayout-tvOSTests'
+
     testing_pods
 end

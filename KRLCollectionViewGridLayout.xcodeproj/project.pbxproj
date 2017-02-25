@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		45D00B987DFF24358FA34C9C /* Pods_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD779FAF4574C3D5C6E9DC83 /* Pods_iOSTests.framework */; };
-		4FDB144F8CB458B14D3AE252 /* Pods_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF002EA414014447C51EC052 /* Pods_tvOSTests.framework */; };
+		08EC8DE31C076070D43C63F2 /* Pods_KRLCollectionViewGridLayout_tvOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6282B316A63C4548A2C0F34F /* Pods_KRLCollectionViewGridLayout_tvOSTests.framework */; };
 		791EEB5A1957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 791EEB591957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m */; };
 		791EEB5D1957DB2F009DC47A /* KRLSimpleCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791EEB5C1957DB2F009DC47A /* KRLSimpleCollectionViewController.m */; };
 		792DAF711C0153C4008FBE10 /* KRLCollectionViewGridLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792DAF6A1C0153C4008FBE10 /* KRLCollectionViewGridLayout.framework */; };
@@ -34,6 +33,7 @@
 		79AE32311C0170E400BB3143 /* KRLCollectionViewGridLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792DAF6A1C0153C4008FBE10 /* KRLCollectionViewGridLayout.framework */; };
 		79DB11D41A71FF290047FEE8 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79DB11D31A71FF290047FEE8 /* Launch Screen.xib */; };
 		79DB11D81A7204890047FEE8 /* HeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB11D61A7204890047FEE8 /* HeaderFooterView.swift */; };
+		985BAA3D6205A5A4F0064126 /* Pods_KRLCollectionViewGridLayout_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D941604B2F2E0272D8F50C8 /* Pods_KRLCollectionViewGridLayout_iOSTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +93,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		049479D628345DA903AF6C5A /* Pods-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvOSTests/Pods-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		20803D2D040F5D16811DAFD0 /* Pods-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvOSTests/Pods-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		432D72F8EB7CBFBD4BFA44B0 /* Pods-KRLCollectionViewGridLayout-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRLCollectionViewGridLayout-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KRLCollectionViewGridLayout-tvOSTests/Pods-KRLCollectionViewGridLayout-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6282B316A63C4548A2C0F34F /* Pods_KRLCollectionViewGridLayout_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KRLCollectionViewGridLayout_tvOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D941604B2F2E0272D8F50C8 /* Pods_KRLCollectionViewGridLayout_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KRLCollectionViewGridLayout_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7214F501B08CB4082881D8E6 /* Pods-KRLCollectionViewGridLayout-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRLCollectionViewGridLayout-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KRLCollectionViewGridLayout-iOSTests/Pods-KRLCollectionViewGridLayout-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		791EEB3D1957D297009DC47A /* KRLCollectionViewGridLayout.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.python; fileEncoding = 4; path = KRLCollectionViewGridLayout.podspec; sourceTree = "<group>"; };
 		791EEB471957DA9E009DC47A /* KRLCollectionViewGridLayout-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KRLCollectionViewGridLayout-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		791EEB4D1957DA9E009DC47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,10 +129,8 @@
 		79D757D3196E51370044DCFF /* KRLCollectionViewGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRLCollectionViewGridLayout.m; path = ../Classes/KRLCollectionViewGridLayout.m; sourceTree = "<group>"; };
 		79DB11D31A71FF290047FEE8 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "iOS/Launch Screen.xib"; sourceTree = "<group>"; };
 		79DB11D61A7204890047FEE8 /* HeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderFooterView.swift; sourceTree = "<group>"; };
-		92C8DCE4DCA338FC4E037E67 /* Pods-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSTests/Pods-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		BF002EA414014447C51EC052 /* Pods_tvOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD779FAF4574C3D5C6E9DC83 /* Pods_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FCFB17486493FF950D4FAAB4 /* Pods-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSTests/Pods-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC62595CE17516B00188911C /* Pods-KRLCollectionViewGridLayout-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRLCollectionViewGridLayout-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KRLCollectionViewGridLayout-tvOSTests/Pods-KRLCollectionViewGridLayout-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		E2C1772176E3F3A543132D4D /* Pods-KRLCollectionViewGridLayout-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KRLCollectionViewGridLayout-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KRLCollectionViewGridLayout-iOSTests/Pods-KRLCollectionViewGridLayout-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79AE32311C0170E400BB3143 /* KRLCollectionViewGridLayout.framework in Frameworks */,
-				45D00B987DFF24358FA34C9C /* Pods_iOSTests.framework in Frameworks */,
+				985BAA3D6205A5A4F0064126 /* Pods_KRLCollectionViewGridLayout_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				792DAFDB1C015E6D008FBE10 /* KRLCollectionViewGridLayout.framework in Frameworks */,
-				4FDB144F8CB458B14D3AE252 /* Pods_tvOSTests.framework in Frameworks */,
+				08EC8DE31C076070D43C63F2 /* Pods_KRLCollectionViewGridLayout_tvOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +231,7 @@
 				791EEB7E196A59CF009DC47A /* README.md */,
 				791EEB3D1957D297009DC47A /* KRLCollectionViewGridLayout.podspec */,
 				79453C501C01224400CC74C0 /* .travis.yml */,
-				7D5787F7517098F83EE9637D /* Pods */,
+				7D5932E1194A60D0D5695A4D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,8 +255,8 @@
 				794C057C18E5217600A94FC3 /* CoreGraphics.framework */,
 				794C057E18E5217600A94FC3 /* UIKit.framework */,
 				794C059C18E5217600A94FC3 /* XCTest.framework */,
-				CD779FAF4574C3D5C6E9DC83 /* Pods_iOSTests.framework */,
-				BF002EA414014447C51EC052 /* Pods_tvOSTests.framework */,
+				6D941604B2F2E0272D8F50C8 /* Pods_KRLCollectionViewGridLayout_iOSTests.framework */,
+				6282B316A63C4548A2C0F34F /* Pods_KRLCollectionViewGridLayout_tvOSTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -284,13 +284,13 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		7D5787F7517098F83EE9637D /* Pods */ = {
+		7D5932E1194A60D0D5695A4D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FCFB17486493FF950D4FAAB4 /* Pods-iOSTests.debug.xcconfig */,
-				92C8DCE4DCA338FC4E037E67 /* Pods-iOSTests.release.xcconfig */,
-				20803D2D040F5D16811DAFD0 /* Pods-tvOSTests.debug.xcconfig */,
-				049479D628345DA903AF6C5A /* Pods-tvOSTests.release.xcconfig */,
+				7214F501B08CB4082881D8E6 /* Pods-KRLCollectionViewGridLayout-iOSTests.debug.xcconfig */,
+				E2C1772176E3F3A543132D4D /* Pods-KRLCollectionViewGridLayout-iOSTests.release.xcconfig */,
+				432D72F8EB7CBFBD4BFA44B0 /* Pods-KRLCollectionViewGridLayout-tvOSTests.debug.xcconfig */,
+				CC62595CE17516B00188911C /* Pods-KRLCollectionViewGridLayout-tvOSTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -321,12 +321,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 791EEB581957DA9E009DC47A /* Build configuration list for PBXNativeTarget "KRLCollectionViewGridLayout-iOSTests" */;
 			buildPhases = (
-				668F755E3B43C28360ED2374 /* Check Pods Manifest.lock */,
+				346F3F6C2AE587B2D794BD2D /* [CP] Check Pods Manifest.lock */,
 				791EEB431957DA9E009DC47A /* Sources */,
 				791EEB441957DA9E009DC47A /* Frameworks */,
 				791EEB451957DA9E009DC47A /* Resources */,
-				2102C962A5A344BBAEDC8754 /* Embed Pods Frameworks */,
-				03F60B1166EDFF800219C247 /* Copy Pods Resources */,
+				C3A9805C86E8A61584BABF97 /* [CP] Embed Pods Frameworks */,
+				E4D44BB0535BEE1CDF43FF0B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -397,12 +397,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 792DAFEB1C015E6D008FBE10 /* Build configuration list for PBXNativeTarget "KRLCollectionViewGridLayout-tvOSTests" */;
 			buildPhases = (
-				603E76199C38147E5E7DE49B /* Check Pods Manifest.lock */,
+				DDE5D11EBE6D21D07DB34163 /* [CP] Check Pods Manifest.lock */,
 				792DAFD61C015E6C008FBE10 /* Sources */,
 				792DAFD71C015E6C008FBE10 /* Frameworks */,
 				792DAFD81C015E6C008FBE10 /* Resources */,
-				88747E2001037F3D1E150CD1 /* Embed Pods Frameworks */,
-				F19026EBFF9DFAB46FDD93D5 /* Copy Pods Resources */,
+				761FF0FAE4998F30F126369A /* [CP] Embed Pods Frameworks */,
+				E461FA058EAD5EAADFB4F7F2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -442,7 +442,7 @@
 				CLASSPREFIX = KRL;
 				LastSwiftMigration = 0710;
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Kevin Lundberg";
 				TargetAttributes = {
 					792DAF691C0153C4008FBE10 = {
@@ -450,12 +450,16 @@
 					};
 					792DAF981C015C97008FBE10 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 					};
 					792DAFD01C015E6C008FBE10 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
 					792DAFD91C015E6C008FBE10 = {
 						CreatedOnToolsVersion = 7.1.1;
+					};
+					794C057618E5217600A94FC3 = {
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -533,94 +537,94 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		03F60B1166EDFF800219C247 /* Copy Pods Resources */ = {
+		346F3F6C2AE587B2D794BD2D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSTests/Pods-iOSTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		2102C962A5A344BBAEDC8754 /* Embed Pods Frameworks */ = {
+		761FF0FAE4998F30F126369A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSTests/Pods-iOSTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KRLCollectionViewGridLayout-tvOSTests/Pods-KRLCollectionViewGridLayout-tvOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		603E76199C38147E5E7DE49B /* Check Pods Manifest.lock */ = {
+		C3A9805C86E8A61584BABF97 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KRLCollectionViewGridLayout-iOSTests/Pods-KRLCollectionViewGridLayout-iOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		668F755E3B43C28360ED2374 /* Check Pods Manifest.lock */ = {
+		DDE5D11EBE6D21D07DB34163 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		88747E2001037F3D1E150CD1 /* Embed Pods Frameworks */ = {
+		E461FA058EAD5EAADFB4F7F2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOSTests/Pods-tvOSTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KRLCollectionViewGridLayout-tvOSTests/Pods-KRLCollectionViewGridLayout-tvOSTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F19026EBFF9DFAB46FDD93D5 /* Copy Pods Resources */ = {
+		E4D44BB0535BEE1CDF43FF0B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOSTests/Pods-tvOSTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KRLCollectionViewGridLayout-iOSTests/Pods-KRLCollectionViewGridLayout-iOSTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -729,7 +733,7 @@
 /* Begin XCBuildConfiguration section */
 		791EEB561957DA9E009DC47A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCFB17486493FF950D4FAAB4 /* Pods-iOSTests.debug.xcconfig */;
+			baseConfigurationReference = 7214F501B08CB4082881D8E6 /* Pods-KRLCollectionViewGridLayout-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -744,7 +748,7 @@
 		};
 		791EEB571957DA9E009DC47A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92C8DCE4DCA338FC4E037E67 /* Pods-iOSTests.release.xcconfig */;
+			baseConfigurationReference = E2C1772176E3F3A543132D4D /* Pods-KRLCollectionViewGridLayout-iOSTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Tests/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.klundberg.${PRODUCT_NAME:rfc1034identifier}";
@@ -758,6 +762,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -784,6 +789,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -822,6 +828,7 @@
 				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
 				SDKROOT = appletvos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -843,6 +850,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.klundberg.tvOSDemo;
 				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -852,6 +860,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -880,6 +889,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -906,7 +916,7 @@
 		};
 		792DAFEC1C015E6D008FBE10 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20803D2D040F5D16811DAFD0 /* Pods-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 432D72F8EB7CBFBD4BFA44B0 /* Pods-KRLCollectionViewGridLayout-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -925,7 +935,7 @@
 		};
 		792DAFED1C015E6D008FBE10 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 049479D628345DA903AF6C5A /* Pods-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = CC62595CE17516B00188911C /* Pods-KRLCollectionViewGridLayout-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				COPY_PHASE_STRIP = NO;
@@ -955,14 +965,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -995,13 +1010,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1010,6 +1030,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1029,6 +1050,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.klundberg.iOSDemo;
 				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1046,6 +1068,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.klundberg.iOSDemo;
 				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
