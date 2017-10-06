@@ -1,5 +1,8 @@
 # KRLCollectionViewGridLayout CHANGELOG
 
+## 1.0.0
+* Marked library as stable with a 1.0 release
+
 ## 0.4.1
 
 * Reorganized repo and added framework iOS target

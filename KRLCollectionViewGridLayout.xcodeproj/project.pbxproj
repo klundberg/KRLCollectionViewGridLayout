@@ -186,7 +186,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		791EEB4B1957DA9E009DC47A /* KRLCollectionViewGridLayoutTests */ = {
+		791EEB4B1957DA9E009DC47A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				791EEB591957DACA009DC47A /* KRLCollectionViewGridLayoutTest.m */,
@@ -194,7 +194,6 @@
 				791EEB5C1957DB2F009DC47A /* KRLSimpleCollectionViewController.m */,
 				791EEB4D1957DA9E009DC47A /* Info.plist */,
 			);
-			name = KRLCollectionViewGridLayoutTests;
 			path = Tests;
 			sourceTree = "<group>";
 		};
@@ -222,8 +221,8 @@
 		794C056E18E5217600A94FC3 = {
 			isa = PBXGroup;
 			children = (
-				79D757D1196E511E0044DCFF /* KRLCollectionViewGridLayout */,
-				791EEB4B1957DA9E009DC47A /* KRLCollectionViewGridLayoutTests */,
+				79D757D1196E511E0044DCFF /* Classes */,
+				791EEB4B1957DA9E009DC47A /* Tests */,
 				794C058018E5217600A94FC3 /* Demo */,
 				794C057918E5217600A94FC3 /* Frameworks */,
 				794C057818E5217600A94FC3 /* Products */,
@@ -275,14 +274,13 @@
 			path = Demo;
 			sourceTree = "<group>";
 		};
-		79D757D1196E511E0044DCFF /* KRLCollectionViewGridLayout */ = {
+		79D757D1196E511E0044DCFF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				792DAF771C015420008FBE10 /* Info.plist */,
 				79D757D2196E51370044DCFF /* KRLCollectionViewGridLayout.h */,
 				79D757D3196E51370044DCFF /* KRLCollectionViewGridLayout.m */,
 			);
-			name = KRLCollectionViewGridLayout;
 			path = Classes;
 			sourceTree = "<group>";
 		};
