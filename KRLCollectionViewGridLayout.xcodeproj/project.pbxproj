@@ -839,8 +839,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.klundberg.tvOSDemo;
 				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
 				SDKROOT = appletvos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -862,7 +861,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.klundberg.tvOSDemo;
 				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1011,6 +1010,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1073,8 +1073,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.klundberg.iOSDemo;
 				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1092,7 +1091,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.klundberg.iOSDemo;
 				PRODUCT_NAME = KRLCollectionViewGridLayoutDemo;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
