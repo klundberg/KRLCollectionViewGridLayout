@@ -1,7 +1,7 @@
 # references:
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
-osx_image: xcode8.2
+osx_image: xcode9
 language: objective-c
 
 env:
@@ -11,7 +11,6 @@ env:
 before_install:
 - gem update cocoapods --no-rdoc --no-ri --no-document --quiet # Since Travis is not always on latest version
 - pod repo update
-- xcrun simctl delete DB794781-65A7-4884-8D00-AAC3CBD39A44 # workaround for https://github.com/travis-ci/travis-ci/issues/7031
 
 script:
 - pod install
